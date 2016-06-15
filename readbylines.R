@@ -22,3 +22,8 @@ filelines <- readLines(data.dir)
 authorgrep <- "<author>([A-Za-z ]*)<\\/author>" # figure out general expression here
 author <- grep(authorgrep, filelines, value=TRUE) # gather line contents for author
 # author <- grep(authorgrep, filelines, value=FALSE) # gather vector addresses for author
+
+titlegrep <- "<title>([A-Za-z ,]*)<\\/title>" # figure out general expression here
+title <- grep(titlegrep, filelines, value=TRUE) # gather line contents for author
+# author <- grep(authorgrep, filelines, value=FALSE) # gather vector addresses for author
+
