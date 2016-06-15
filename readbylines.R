@@ -1,5 +1,7 @@
 # testing with one file
 # save the path to the file
+filelist <- list.files(path="data",pattern="*xml",recursive=TRUE)
+
 data.dir <- "data/1/1/000006/000006.xml"
 
 # read all the lines into a vector
