@@ -26,7 +26,7 @@ for (file in filelist) {
   
   fileparse <- matrix()
   
-  authorgrep <- "^/s<author>([A-Za-z ]*)<\\/author>" # figure out general expression here
+  authorgrep <- "^/s<dhq:author_name>([A-Za-z ]*)/n" # figure out general expression here
   author <- grep(authorgrep, filelines, value=TRUE) # gather line contents for author
   
   titlegrep <- "^/s<title>([A-Za-z ,]*)<\\/title>" # figure out general expression here
