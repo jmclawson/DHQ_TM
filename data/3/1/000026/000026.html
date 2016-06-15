@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.digitalhumanities.org/dhq/vol/3/1/000026/000026.html by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 16 May 2015 13:06:58 GMT -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><title>DHQ: Digital Humanities Quarterly: Exploring Historical RDF with Heml</title><link rel="stylesheet" type="text/css" href="../../../../common/css/dhq.css"/><link rel="stylesheet" type="text/css" media="screen" href="../../../../common/css/dhq_screen.css"/><link rel="stylesheet" type="text/css" media="print" href="../../../../common/css/dhq_print.css"/><link rel="alternate" type="application/atom+xml" href="../../../../feed/news.xml"/><link rel="shortcut icon" href="../../../../common/images/favicon.ico"/><script type="text/javascript" src="../../../../common/js/javascriptLibrary.js">
+                &lt;!-- Javascript functions --&gt;
+            </script><script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-15812721-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+
+        </script></head><body><div id="top"><div id="backgroundpic"><script type="text/javascript" src="../../../../common/js/pics.js"><!--displays banner image--></script></div><div id="banner"><div id="dhqlogo"><img src="http://www.digitalhumanities.org/dhq/common/images/dhqlogo.png" alt="DHQ Logo"/></div><div id="longdhqlogo"><img src="http://www.digitalhumanities.org/dhq/common/images/dhqlogolonger.png" alt="Digital Humanities Quarterly Logo"/></div></div><div id="topNavigation"><div id="topnavlinks"><span><a href="../../../../index.html" class="topnav">home</a></span><span><a href="../../../../submissions/index.html" class="topnav">submissions</a></span><span><a href="../../../../about/about.html" class="topnav">about dhq</a></span><span><a href="../../../../people/people.html" class="topnav">dhq people</a></span><span id="rightmost"><a href="../../../../contact/contact.html" class="topnav">contact</a></span></div><div id="search"><form action="http://www.digitalhumanities.org/dhq/findIt" method="get" onsubmit="javascript:document.location.href=cleanSearch(this.queryString.value); return false;"><div><input type="text" name="queryString" size="18"/> <input type="submit" value="Search"/></div></form></div></div></div><div id="main"><div id="leftsidebar"><div id="leftsidenav"><span>Current Issue<br/></span><ul><li><a href="../../../8/4/index.html">2014: 8.4</a></li></ul><span>Preview Issue<br/></span><ul><li><a href="../../../../preview/index.html">2015: 9.1</a></li></ul><span>Previous Issues<br/></span><ul><li><a href="../../../8/3/index.html">2014: 8.3</a></li><li><a href="../../../8/2/index.html">2014: 8.2</a></li><li><a href="../../../8/1/index.html">2014: 8.1</a></li><li><a href="../../../7/3/index.html">2013: 7.3</a></li><li><a href="../../../7/2/index.html">2013: 7.2</a></li><li><a href="../../../7/1/index.html">2013: 7.1</a></li><li><a href="../../../6/3/index.html">2012: 6.3</a></li><li><a href="../../../6/2/index.html">2012: 6.2</a></li><li><a href="../../../6/1/index.html">2012: 6.1</a></li><li><a href="../../../5/3/index.html">2011: 5.3</a></li><li><a href="../../../5/2/index.html">2011: 5.2</a></li><li><a href="../../../5/1/index.html">2011: 5.1</a></li><li><a href="../../../4/2/index.html">2010: 4.2</a></li><li><a href="../../../4/1/index.html">2010: 4.1</a></li><li><a href="../../4/index.html">2009: 3.4</a></li><li><a href="../../3/index.html">2009: 3.3</a></li><li><a href="../../2/index.html">2009: 3.2</a></li><li><a href="../index.html">2009: 3.1</a></li><li><a href="../../../2/1/index.html">2008: 2.1</a></li><li><a href="../../../1/2/index.html">2007: 1.2</a></li><li><a href="../../../1/1/index.html">2007: 1.1</a></li></ul><span>Indexes<br/></span><ul><li><a href="../../../../index/title.html"> Title</a></li><li><a href="../../../../index/author.html"> Author</a></li></ul></div><img src="http://www.digitalhumanities.org/dhq/common/images/lbarrev.png" style="margin-left : 7px;" alt="sidenavbarimg"/><div id="leftsideID"><b>ISSN 1938-4122</b><br/></div><div class="leftsidecontent"><h3>Announcements</h3><ul><li><a href="../../../../announcements/index.html#reviewers">Call for Reviewers</a></li><li><a href="../../../../announcements/index.html#submissions">Call for Submissions</a></li></ul></div><div class="leftsidecontent"><script type="text/javascript">addthis_pub  = 'dhq';</script><a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s9.addthis.com/button1-addthis.gif" width="125" height="16" alt="button1-addthis.gif"/></a><script type="text/javascript" src="../../../../../../s7.addthis.com/js/152/addthis_widget.js">&lt;!-- Javascript functions --&gt;</script></div></div><div id="mainContent"><div id="printSiteTitle">DHQ: Digital Humanities Quarterly</div><div xmlns:dhqBiblio="http://digitalhumanities.org/dhq/ns/biblio" class="DHQarticle"><div id="pubInfo">Changing the Center of Gravity: Transforming Classical Studies Through
+      Cyberinfrastructure<br/>2009<br/>Volume 3 Number 1</div><div class="toolbar"><form id="taporware" action="http://www.digitalhumanities.org/dhq/vol/3/1/000026/get"><div><a href="../index.html">2009 3.1</a>
+                     | 
+                    <a rel="external" href="000026.xml">XML</a>
+
+| 
+		   Discuss
+			(<a href="000026.html#disqus_thread" data-disqus-identifier="000026">
+				Comments
+			</a>)
+                </div></form></div><div class="DHQheader"><h1 class="articleTitle">Exploring Historical RDF with Heml</h1><div class="author"><a rel="external" href="../bios.html#robertson_b">Bruce Robertson</a> &lt;<a href="mailto:broberts_at_mta_dot_ca" onclick="javascript:window.location.href='mailto:'+deobfuscate('broberts_at_mta_dot_ca'); return false;" onkeypress="javascript:window.location.href='mailto:'+deobfuscate('broberts_at_mta_dot_ca'); return false;">broberts_at_mta_dot_ca</a>&gt;, Mount Allison University</div><span xmlns="" class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft.genre=article&amp;rft.atitle=Exploring%20Historical%20RDF%20with%20Heml&amp;rft.jtitle=Digital%20Humanities%20Quarterly&amp;rft.stitle=DHQ&amp;rft.issn=1938-4122&amp;rft.date=2009-02-26&amp;rft.volume=003&amp;rft.issue=1&amp;rft.aulast=Robertson&amp;rft.aufirst=Bruce&amp;rft.au=Bruce%20Robertson"> </span></div><div id="DHQtext"><div id="abstract"><h2>Abstract</h2><p>The Web, though full of historical information, lacks a means of organizing that
+        information, searching on it or visualizing it. The Historical Event Markup and Linking
+        Project (Heml) was begun six years ago to explore how disparate historical materials on the
+        Internet can be navigated and visualized, and for the past four years has used an XML data format defined in W3C Schemas. 
+        This format aims for conforming data that can be
+        quickly parsed but provide a variety of facets on which to search for historical materials.
+        While the project's graphical visualizations are in some respects successful, they have revealed some
+        deficiencies in the underlying data format: it ought to provide for nested events, it ought to represent relations
+        of causality between events and it ought to express the varieties of scholarly opinion about the attributes of events. By encoding the
+        Heml data in the Resource Description Framework (RDF) it is possible to undertake these
+        improvements. Moreover, an RDF-encoded Heml process provides easier access to
+        CIDOC-CRM data into Heml events. Finally, a historical RDF language would simplify the discovery of references to historical events 
+        in digitized texts, thereby automating a
+        growing network of historical information on the Web.</p></div><div class="div div0"><h1 class="head">Introduction</h1><div class="counter"><a href="#p1">1</a></div><div class="ptext" id="p1">Beginning his work which was to be the first called a "history", the Greek author
+        Herodotus describes his task in simple terms: "to preserve the memory of the past by putting
+        on record the astonishing achievements both of our own and of other peoples" (line 1.0). Within
+        the first few chapters, though, it becomes clear that, to Herodotus, this entails something
+        more multivalent than mere story-telling. His very next sentence buttresses the narrative
+        with references to its various, even conflicting, sources 1.1; not much later, he corroborates
+        his stories by referring to physical artifacts and providing careful genealogies 1.7, 1.14; and
+        throughout he attempts to place the notable events of the past within the available
+        chronological outlines (e.g, 16.1). From its origins, then, history has been conducted across a
+        framework of argumentation, evidence, chronology and prosopography.</div><div class="counter"><a href="#p2">2</a></div><div class="ptext" id="p2">This intellectual approach, begun by Herodotus and his rough contemporaries around the
+        world, has proved a durable and useful way of thinking. Moreover, as the global Internet
+        expands, and the common software technologies of the World Wide Web provide us with
+        unprecedented means of communication, humanity has greater access to more historical
+        statements and more of the raw materials of history than ever before. Indeed, it might be said that
+        today's Web has the makings of an historian's fantasy: it provides worthy encyclopedia
+        entries on a vast array of topics; its textual editions are rapidly improving in quality and
+        amassing in quantity; and it offers historical source material ranging from argumentation in
+        on-line editions of the best journals to the first-hand accounts appearing in blog entries.
+        Scholarly historical projects published uniquely on the Web are common, supported by
+        academic centres whose purpose is to communicate history effectively in new media, and who are
+        also addressing the general problems of adopting best standards of scholarship to the Web in
+        projects such as <a class="ref" href="http://www.zotero.org/" onclick="window.open('http://www.zotero.org/'); return false">Zotero</a>. Behind the scene, data
+        formats such as the CIDOC-CRM aim to make it possible to interchange and reconcile vast
+        cultural archives. </div><div class="counter"><a href="#p3">3</a></div><div class="ptext" id="p3"> However what today's Web offers in historical content, it lacks in organization. The
+        multivalent nature of historical thought that we noted in one of its earliest practitioners
+        eludes the keyword-indexed approach to the Web today on offer through Google and other
+        search engines. Though we can summon up an exhaustive list of Web resources that contain the
+          <em class="emph">words</em>"Gallipoli" and "sources", today's Web cannot effectively respond to a
+        basic historical question such as, "which sources attest the Gallipoli Campaign of World War
+        I?" much less a more advanced one such as, "what evidence is there for major architectural
+        projects undertaken in the U.K. during the period of the Boer War, and does anyone think
+        that these projects are influenced by the conflict?" If it were possible to conduct such a
+        query, of course the result would not itself qualify as "history" any more than the results
+        of a Google search constitute knowledge. However, the results of such a hypothetical search
+        would offer a considerable aid to historical research and thinking, just as the indices,
+        maps and, occasionally, tables that appear at the end of most monographs allow the reader
+        rapidly to access matters of interest. Applying this analogy, what is needed in the Web is
+        "universal back-matter", a Web-wide equivalent to the traditional print monograph's helpful conventions.<a class="noteRef" href="#d22963e137">[1]</a></div><div class="counter"><a href="#p4">4</a></div><div class="ptext" id="p4">Herodotus and his successors have given us a template for such a project.
+        Minimally, it will need to express associations between words describing the event through  chronology, geography and prosopography. It will need to provide
+        references to diverse sources and evidence, and it will need to traverse, as much as
+        possible, the boundaries of local language and even local time-keeping
+              techniques.<a class="noteRef" href="#d22963e154">[2]</a> Indeed, over fifteen years ago, the prescient Historian's Workstation
+        Project employed the same basic types of data [<a class="ref" href="#thaller1991">Thaller
+      1991</a>]; however, the Internet has added the challenge of working
+        with a more heterogeneous set of data sources and today's possibilities for the
+        visualization of historical data go far beyond the Workstation's.<a class="noteRef" href="#d22963e167">[3]</a></div><div class="counter"><a href="#p5">5</a></div><div class="ptext" id="p5"> The Historical Event Markup and Linking Project (Heml) has pursued the vision of a system
+        such as this since 2001, when it began to explore the markup and transformation of
+        historical materials on the Internet using XML tools. All schemas and code developed by this
+        project are available at its website, <a class="ref" href="http://www.heml.org/" onclick="window.open('http://www.heml.org/'); return false">http://www.heml.org/</a> and complete revision history is provided in an SVN repository.
+        This paper explains Heml's next step toward the goal of an historical Web. It outlines the
+        data format used by the project, shows the shortcomings of our previous XML-based approach
+        to historical markup and describes the potential of an historical markup scheme based around
+        the W3C's Resource Description Framework, or <a class="ref" href="http://www.w3.org/tr/rec-rdf-syntax/" onclick="window.open('http://www.w3.org/tr/rec-rdf-syntax/'); return false">RDF</a>, to interchange historical
+        concepts widely and to express them in a more nuanced manner. </div><div class="counter"><a href="#p6">6</a></div><div class="ptext" id="p6">It is a pleasure to be able to offer this paper in the collection of works celebrating the
+        achievements of Ross Scaife. Like so many efforts in computing and the Classics, this one
+        has been nurtured by Ross' kind support and encouragement. Furthermore, I have always hoped
+        that Heml would attain the level of openness and helpfulness that are the hallmarks of Ross'
+        work and of his character.</div></div><div class="div div0"><h1 class="head">The Heml Data Model</h1><div class="counter"><a href="#p7">7</a></div><div class="ptext" id="p7">The goal of a searchable network of historical information can only be reached through a
+        clear separation between the model of the data being searched, the parameters of the search
+        and the resulting visualization of the data. Since the project intends that these
+        visualizations be generated dynamically in response to users' queries, the data model must
+        be specific enough that the visualization can generated quickly; likewise, since the results
+        of users' queries could result in no events, one event, or thousands of events, and the range of values
+        represented in these encoded events could be quite wide, the visualization processes must be
+        written so as to generate useful views without regard for the number of events visualized or
+        how close or far they are in time and space. For this reason, the Heml project has attempted
+        to steer a middle path between pragmatism and markup idealism, especially regarding
+        chronology. Thus, its data schema, on one hand, is not a complete abstraction of any way in
+        which a person might think of the past, since this would make the task of visualization too
+        daunting. In particular, its schema requires machine-readable data for all defined
+        geographical and chronological data. (As shown below, this does not preclude the schema
+        representing uncertainty.) On the other hand, the schema is not merely an API for the
+        various visualizations offered by Heml; it is abstract enough that many other visualizations
+        and uses could be discovered.</div><div class="counter"><a href="#p8">8</a></div><div class="ptext" id="p8"> At its inception, the Heml server software transformed XML documents one-by-one
+            [<a class="ref" href="#robertson2002">Robertson 2002</a>]; in versions 0.4 to 0.7.2 the project adopted a distributed XML
+        model, backed up by the <a class="ref" href="http://www.exist-db.org/" onclick="window.open('http://www.exist-db.org/'); return false">eXist</a> XML database
+            [<a class="ref" href="#robertson2004">Robertson 2004</a>], an approach that worked
+        well in a collaboration with Tom Costa's project, <a class="ref" href="http://www.vcdh.virginia.edu/gos/" onclick="window.open('http://www.vcdh.virginia.edu/gos/'); return false"> Geography of Slavery in Virginia</a>, where
+        a Heml Web application backed by eXist transforms events pertaining to slaves into hundreds
+        of dynamically generated maps and timelines. In either case, the project's data model has
+        remained the same for the past four years, and the following describes the model labelled
+        2003-09-17.</div><div class="counter"><a href="#p9">9</a></div><div class="ptext" id="p9"> The Heml data format contains a collection of modelled events, each tagged with
+        <span class="monospace">heml:Event</span>. At their most simple, events bind an event label with a
+        machine-readable span of time and a reference to evidence, which could be as simple as a
+        single URN. Optionally, a <span class="monospace">heml:Event</span> may also comprise any number of keywords,
+        and a single location, which in turn is defined as a labelled pair of latitude and longitude
+        coordinates. <span class="monospace">heml:Person</span> elements may be added to events in order to represent
+        those people who were in some way involved in the event. If the nature of this participation
+        is known, the <span class="monospace">heml:Person</span> element may be bound to a <span class="monospace">heml:Role</span>
+        element within the context of the event. Persons, roles, locations, and keywords are
+        assigned mandatory URIs so that they may be referred to in multiple events. Finally, one or
+        more <span class="monospace">heml:Evidence</span> elements must be attributed to each event, and within these
+        there is a means by which different editions and linguistic representations of the same text
+        may be grouped together for the researcher's benefit.</div></div><div class="div div0"><h1 class="head">Chronology</h1><div class="counter"><a href="#p10">10</a></div><div class="ptext" id="p10">The most complex part of Heml's data model is the <span class="monospace">heml:Chronology</span> element.
+          Its model is intended to express uncertainty and ranges of time without requiring the
+          visualization engine to have access to all data.<a class="noteRef" href="#d22963e232">[4]</a> In Heml markup, chronological concepts are always built using one of the following
+          four elements: <span class="monospace">heml:DateTime</span>, <span class="monospace">heml:Date</span>, <span class="monospace">heml:Year</span>
+          or <span class="monospace">IntCalDate</span>. The first three of these encapsulate data encoded in the
+          corresponding XML Schemas format; the last permits the user to encode with a non-Gregorian
+          calendar. When used alone, these elements are  meant to indicating a corresponding span
+          of time: for instance the <span class="monospace">&lt;heml:Year&gt;-31&lt;heml:Year&gt;</span> indicates
+          an event that began on the first second of the first day of 31 BC and ended on the last
+          second of its last day. To express a more expanded range of time, the
+          <span class="monospace">heml:DateRange</span> element is used, and within it mandatory
+            <span class="monospace">heml:StartingDate</span> and <span class="monospace">heml:EndingDate</span> elements. This construct
+          is parsed as indicating a span of time beginning at the beginning of the first element and
+          ending at the ending of the last one. To express uncertainty, the
+          <span class="monospace">heml:BoundedDate</span> element is used. It comprises a
+          <span class="monospace">heml:TerminusPostQuem</span> and a <span class="monospace">heml:TerminusAnteQuem</span> element; these
+          express the earliest possible and latest possible time respectively of a span of uncertain
+          time. Use alone, <span class="monospace">heml:BoundedDate</span> makes no claim about the duration of the
+          encoded event. However, it is permitted to use a <span class="monospace">heml:BoundedDate</span> within the
+            <span class="monospace">heml:StartingDate</span> or <span class="monospace">heml:EndingDate</span> of a
+          <span class="monospace">heml:DateRange</span>. <div id="example01" class="example"><blockquote class="eg"><pre><tt>
+              
+        &lt;heml:Chronology&gt;
+           &lt;heml:DateRange&gt;
+              &lt;heml:StartingDate&gt;
+                  &lt;heml:DateTime&gt;1995-05-21T21:03Z&lt;/hemlDateTime&gt;
+              &lt;/heml:StartingDate&gt;
+              &lt;heml:EndingDate&gt;
+                &lt;heml:BoundedDate&gt;
+                  &lt;heml:TerminusPostQuem&gt;
+                      &lt;heml:Date&gt;2005-03-21&lt;/heml:Date&gt;
+                   &lt;/heml:TerminusPostQuem&gt;
+                   &lt;heml:TerminusAnteQuem&gt;
+                      &lt;heml:Date&gt;2005-03-21&lt;/heml:Date&gt;
+                  &lt;/heml:TerminusAnteQuem&gt;
+                &lt;/heml:BoundedDate&gt;
+              &lt;/heml:EndingDate&gt;
+            &lt;/heml:DateRange&gt;
+        &lt;/heml:Chronology&gt;
+          </tt></pre></blockquote><div class="caption"><div class="label">Example 1. </div>Example of Chronological Information Expressed in Heml's 2003-09-17 Schema</div></div> Thus the XML in <a href="#example01">Example 1</a> encodes as an event beginning at
+          exactly 21:03 UTC on May the twenty-first 1995 and ending at some time on March the
+          twenty-first 2005.
+          
+        </div></div><div class="div div0"><h1 class="head">Similar Schemas</h1><div class="counter"><a href="#p11">11</a></div><div class="ptext" id="p11">There are other schemas from other fields that encode representations of labelled spans of time
+          and place. 
+          <a class="ref" href="http://dublincore.org/" onclick="window.open('http://dublincore.org/'); return false">Dublin Core</a> Metadata standard includes date and
+          location tags that, in certain uses, encode certain kinds of historical events, but these naturally
+          revolve around the documents themselves, such as publication information; they cannot, for instance, encode the battle described therein.
+          Similarly, the P5 edition of the TEI includes a welcomed set of <a class="ref" href="http://www.tei-c.org/activities/workgroups/pers/" onclick="window.open('http://www.tei-c.org/activities/workgroups/pers/'); return false">biographical and prosopographical tags</a>, including one for events. However, at present,
+          all such P5 <span class="monospace">event</span> elements must appear within a <span class="monospace">person</span> or <span class="monospace">place</span> element, 
+          expressing that the event information serves to further our information about a given person or place: 
+          events that pertain to neither at present cannot be encoded.
+        </div><div class="counter"><a href="#p12">12</a></div><div class="ptext" id="p12">
+          Finally, the <a class="ref" href="http://cidoc.ics.forth.gr/" onclick="window.open('http://cidoc.ics.forth.gr/'); return false">CIDOC-CRM</a> encodes
+          descriptions of cultural artifacts in terms of the events they undergo — their creation, change of
+          custody, and so forth. Though not the primary focus of this schema, historical events are quite broadly modelled in this schema.
+          Indeed, as is shown below, the unmodified CIDOC-CRM model is too liberal for the Heml Project's purposes of generating historical visualizations, especially with reference to what entities and datatypes it accepts as chronological predicates. Nevertheless, it is likely that most of the goals of the 
+          Heml project can be fulfilled through RDFS subclassing of the the CIDOC-CRM model, ensuring more carefully data-typed chronological
+          classes. In any case, the discussion and examples below would apply as well to such a constrained CIDOC-CRM model or to any future schema with similar properties.
+          Indeed, the purpose of the Heml project is decidedly not to promote a particular schema; instead, its schema is intended as a tool which enables us to explore the process of combining all material encoded in all these well-entrenched and widely-adopted 
+          schemas so as to increase the pool of inter-related historical data on the Internet. 
+          </div><div class="counter"><a href="#p13">13</a></div><div class="ptext" id="p13">Technologically, there is little challenge in
+          transferring data from one of these representations to Heml. XML representations can be
+          exchanged through XSLT. In RDF, the SPARQL <a class="ref" href="http://www.w3.org/tr/rdf-sparql-query/#construct" onclick="window.open('http://www.w3.org/tr/rdf-sparql-query/#construct'); return false">CONSTRUCT</a> query form
+          produces transformations from one graph to another. For example, [<a class="ref" href="#robertson2006">Robertson
+      2006</a>] shows how useful a simple Heml and Dublin
+            Core mash-up conducted in XSLT could be. </div></div><div class="div div0"><h1 class="head">Visualizations</h1><div class="counter"><a href="#p14">14</a></div><div class="ptext" id="p14">Heml data is encoded in order that resources pertaining to a certain historical event may
+        be found in response to a user's query. The query might be expressed with regard to any
+        one of the facets of historical expression encoded by the schema above, or on some
+        combination of these. The software discovers the corresponding materials, then generates a
+        visualization of these data according to the user's wishes. Visualizations range from simple
+        chronological text lists in HTML to complex animated maps. Of course, since the data has
+        been prepared without reference to any given visualization, not all visualizations are
+        informative representations of all query results. For instance, an animated map would not be
+        helpful if the set of events in the query response all had the same location or did not have
+        locations encoded at all.</div><div class="counter"><a href="#p15">15</a></div><div class="ptext" id="p15">In the most recently-published version of Heml's server software (v. 0.7.2), visualizations are generated through
+        a Java Web application based on the <a class="ref" href="http://cocoon.apache.org/" onclick="window.open('http://cocoon.apache.org/'); return false">Cocoon Web</a> service engine. Instructions for building and
+        running this software locally are available at <a class="ref" href="http://www.heml.org/" onclick="window.open('http://www.heml.org/'); return false">http://www.heml.org</a>. Using this approach on locally-stored data takes full
+        advantage of Cocoon's ability to cache server-side processes. However, it is also possible
+        to use the server at <a class="ref" href="http://www.heml.org/" onclick="window.open('http://www.heml.org/'); return false">http://www.heml.org</a> to
+        transform any conforming document published on the Web without building or installing
+        software. Instructions are provided online.</div><div class="counter"><a href="#p16">16</a></div><div class="ptext" id="p16"> As described above, all the visualization tools developed by the project operate fully
+        automatically: they provide sensible chronological and geographical boundaries based only on
+        the conforming data on their input and layout the appropriate text without clipping or
+        abbreviation, regardless of the number of events being presented.</div><div class="counter"><a href="#p17">17</a></div><div class="ptext" id="p17">The graphical timeline view, of which <a href="#figure02">Figure 2</a> and <a href="#figure03">Figure 3</a> are examples, lays out event labels at a vertical distance from each other corresponding
+        to their separation in time. It indicates spans of time through vertical coloured lines. This
+        view was designed to be legible and to require as little user interaction as possible,
+        emulating a graphical timeline in print. In fact, the
+        rendering software iterates through layout scenarios in order to find one that is appropriately  compact
+        but whose text is still possible to read. It ensures that the entire text labelling an event is always visible
+        to the user, and scrolling is not necessary to read the event label. The software also selects an appropriate range of
+        dates or times for the events; these can range from a seconds to millennia.<a class="noteRef" href="#d22963e357">[5]</a> Rendered in SVG, this view's event labels are linked to popups that lead the reader
+        to the resources pertaining to the event. </div><div class="counter"><a href="#p18">18</a></div><div class="ptext" id="p18">This approach to timeline-generation differs from other online graphical timeline-drawing, perhaps best represented by the  
+        the Simile <a class="ref" href="http://simile.mit.edu/timeline/" onclick="window.open('http://simile.mit.edu/timeline/'); return false">timeline</a> widget. At present, the Simile timeline is not auto-ranging, and does not attempt to 
+        optimize layout. Rather, its documentation encourages users to identify so-called "hot zones", temporal ranges 
+        comprising unusually large
+        numbers of  events so that the drawing routine can alter the scale in these ranges, thereby producing a more
+        legible layout. The goals of the Heml project, requiring a fully automated rendering, do not make such hand-tweaking possible.
+        However, Simile timeline's excellent use of client-side rendering and DHTML are certainly preferable to the Heml timeline approach. 
+      We hope that by modify the open-source code for Simile timelines we can adopt that project more closely to our needs, 
+      perhaps by identifying "hot zones" computationally.</div><div id="figure01" class="figure"><div class="ptext"><a href="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure01.jpg" rel="external"><img src="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure01.jpg" alt="A imagine of the animation.svg file"/></a></div><div class="caption"><div class="label">Figure 1. </div>Image of a SVG Animation Generated by the v0.7.2 Heml Web application</div></div><div class="counter"><a href="#p19">19</a></div><div class="ptext" id="p19">Another event-visualization system pioneered by the Heml Project is the animated map
+               illustrated in <a href="#figure01">Figure 1</a>. 
+               <span class="hi bold">(1)</span> is a set of user-operated controls familiar from audio-visual
+        apparatus. With these, the user can stop, play pause, rewind and speed up the animation.
+        Item <span class="hi bold">(2)</span> is a slider control that sets the length of the animation in
+        seconds. Item <span class="hi bold">(3)</span> is a moving marker that runs along the line above the
+        animation from left to right, thereby indicating the moment in time currently represented on
+        the map. Above the small triangle a constantly updating text appears recording the current animation time. The event
+        labels at <span class="hi bold">(4)</span> appear in red text as long as the animation is
+        representing a date during which the labelled event is encoded as having taken place. In
+        order that the user be able to read them, event labels do not necessarily disappear as soon
+        as the corresponding event ends in the animated time; rather they remain on the screen in
+        black text until the text has appeared for at least two seconds. The system designates an appropriate chronological scale to the process, 
+        as well as the geographical range of the map.</div></div><div class="div div0"><h1 class="head">Areas For Improvement</h1><div class="counter"><a href="#p20">20</a></div><div class="ptext" id="p20">Although these visualizations have fulfilled some of our goals, they have also
+        pointed out some deficiencies in the underlying data model. <a href="#figure01">Figure 1</a>, for
+        example, presents an apparent mishmash of events. Perhaps the user undertook a too-broad
+        query, but when dealing with any large dataset this sort of result is common because the XML
+        schema puts all events, no matter how trivial, on the same footing. It has therefore been
+        suggested that events should be ranked, or should nest, with large scale events such as "The
+        Persian Wars" expressed as parents of their composite events, like "The Battle of
+        Thermopylae." In response to publications and presentations of the Heml/XML model, others
+        have expressed a desire for more complex historical relations between events to be encoded.
+        Should not Heml express something as simple as causality, such as the fact that Ephialtes'
+        treachery led to the defeat of the Three Hundred? Finally, it has been noted that with Heml/XML
+        markup it is not possible to encode the variations in opinions regarding historical
+        events. When scholars debate the date of the arrival of the Greek-speaking ancestors of the
+        Mycenaeans, what date should be encoded for this event?</div><div class="counter"><a href="#p21">21</a></div><div class="ptext" id="p21">Some of these issues have  been tackled recently by [<a class="ref" href="#nakahira2007">Nakahira 2007</a>], but in the Heml XML Schema they were intentionally left unaddressed for both theoretical
+        and practical reasons. First, it has been this project's experience that resolving such
+        relations with a language such as <a class="ref" href="http://www.w3.org/tr/xquery/" onclick="window.open('http://www.w3.org/tr/xquery/'); return false">XQuery</a> or
+        XSLT was difficult and computationally expensive. Secondly, since the XML Schema expresses
+        matters pertaining to an event by nested elements, it was unclear where a statement linking
+        two elements should appear. Pertaining no more to one element than the other, ideally it
+        should stand outside the <span class="monospace">heml:Event</span> elements, but this raised the prospect of
+        always new schemas required to provide metadata for previous schemas. Finally, a XML schema
+        through which scholarly debate could be encoded for any facet of an event seemed likely to
+        be unmanageably complex.</div></div><div class="div div0"><h1 class="head">RDF and Heml</h1><div class="counter"><a href="#p22">22</a></div><div class="ptext" id="p22">Our work of the past year shows that these problems can be addressed by using the W3C's
+        Resource Description Framework (RDF) as our means of encoding Heml events and related information.<a class="noteRef" href="#d22963e433">[6]</a> As a collection of statements expressed through URIs, RDF is well suited to define
+        metadata that expresses associations between events. Because these statements are unordered,
+        these associations can be asserted in any source of data, anywhere. Moreover, RDF defines a
+        method known as "reification" whereby a statement comprising Subject Verb and Object can
+        itself play the role of subject or object in another, encompassing statement. <a href="#example02">Example 2</a> illustrates the process with an example from Greek prehistory. The
+        first line makes a simple statement, without attribution, that the ancestors of the
+        Mycenaeans arrived in the Greek mainland in 1600 BC. The second line indicates the
+        reification of that statement with parentheses, and attributes this chronology to Drewes
+        with the <span class="monospace">hemlRDF:asserts</span> predicate. The third line refers to the same
+          <span class="monospace">&lt;#Arrival_of_the_Greeks&gt;</span> subject, but it shows that Renfrew assigns
+        that subject a much earlier date. <div id="example02" class="example"><blockquote class="eg"><pre><tt>Statement :           &lt;#Arrival_of_the_Greeks&gt; &lt;hemlRDF:simpleDate&gt; -1600
+Reified Statement A:  &lt;#Drewes&gt; &lt;hemlRDF:asserts&gt; (&lt;#Arrival_of_the_Greeks&gt; &lt;hemlRDF:simpleDate&gt; -1600)
+Reified Statement B:  &lt;#Renfrew&gt; &lt;hemlRDF:asserts&gt; (&lt;#Arrival_of_the_Greeks&gt; &lt;hemlRDF:simpleDate -6000)
+        </tt></pre></blockquote><div class="caption"><div class="label">Example 2. </div>RDF Reification as A Means of Encoding Scholarly Debate Regarding an Event</div></div> The URI corresponding to a scholar then becomes a part of the query, and it is
+        possible to encode, and later summon up, an entire body of knowledge with reference to the scholar asserting it. 
+        For example, the chronology of fifth-century Athens could be encoded
+        with reference to the arguments of Badian or those of Pritchett. This technique becomes all the more important
+        when even more tendentious predicates are applied, such as causation.
+      <a class="noteRef" href="#d22963e459">[7]</a></div><div class="div div1"><h2 class="head">Data-Entry for HemlRDF</h2><div class="counter"><a href="#p23">23</a></div><div class="ptext" id="p23"> Despite these possibilities, we were concerned that the increased representational
+          complexity of RDF would make it difficult for students and other users to encode their
+          data. In fact, in the summer of 2007 we had excellent experience using the <a class="ref" href="http://meta.wikimedia.org/wiki/semantic_mediawiki" onclick="window.open('http://meta.wikimedia.org/wiki/semantic_mediawiki'); return false">Semantic MediaWiki</a>
+          extension to MediaWiki as a HemlRDF editor. With this environment, motivated students as
+          young as ten years old produced dozens of fully-compliant RDF-encoded events with an
+          hour's work. The resulting RDF is not identical to the HemlRDF parsed by the Web
+          application because certain simplifications were considered helpful to the user.<a class="noteRef" href="#d22963e477">[8]</a> However, a simple SPARQL query, available in the
+          <span class="monospace">/sparql/wiki/</span> directory of the project SVN repository, transforms the data
+          to HemlRDF. With some work, or as Semantic MediaWiki improves, it might be possible for it
+          to generate HemlRDF directly, thereby allowing students to see automatically updated
+          visualizations as soon as they save encoded events and related articles. A
+          <span class="monospace">tar.gz</span> SQL dump of our project's wiki, which includes the semantic metadata,
+          is regularly generated and available at <a class="ref" href="http://heml.mta.ca/releases/wiki" onclick="window.open('http://heml.mta.ca/releases/wiki'); return false">http://heml.mta.ca/releases/Wiki</a>.</div></div><div class="div div1"><h2 class="head">RDF-Based Nested Events</h2><div class="counter"><a href="#p24">24</a></div><div class="ptext" id="p24">While building a dataset of ancient history in the Wiki, we experimented with one of the
+          improvements suggested above, and encoded certain events as "comprising" others with a
+            <span class="monospace">hemlRDF:comprisesEvent</span> predicate. In <a href="#example03">Example 3</a> the nested
+          representation indicates that the <span class="monospace">heml:Event</span> with the URI
+            <span class="monospace">wiki:Samnite_Wars</span> is described as comprising
+            <span class="monospace">wiki:Battle_of_Mount_Gaurus</span>, etc. <div id="example03" class="example"><blockquote class="eg"><pre><tt>&lt;smw:Thing rdf:about="wiki:Samnite_Wars"&gt;
+&lt;rdf:type rdf:resource="http://www.heml.org/rdf/2003-09-17/heml/Event"/&gt;
+&lt;rdfs:label&gt;Samnite Wars&lt;/rdfs:label&gt;
+&lt;smw:hasArticle rdf:resource="&amp;wikiurl;Samnite_Wars"/&gt;
+&lt;rdfs:isDefinedBy rdf:resource="&amp;wikiurl;Special:ExportRDF/Samnite_Wars"/&gt;
+          
+&lt;hemlRDF:comprisesEvent rdf:resource="wiki:Samnian_Alliance"/&gt;
+&lt;hemlRDF:comprisesEvent rdf:resource="wiki:Battle_of_Mount_Gaurus"/&gt;
+&lt;hemlRDF:comprisesEvent rdf:resource="wiki:Great_Samnite_War"/&gt;
+&lt;hemlRDF:comprisesEvent rdf:resource="wiki:Third_Samnite_War"/&gt;
+&lt;/smw:Thing&gt;
+            </tt></pre></blockquote><div class="caption"><div class="label">Example 3. </div>RDF Expressing A "Parent" Event By Means of a Series of "Child" Events</div></div> These "parent" events are ascribed chronologies, participants, and all other
+          properties wholly in terms of their children elements. For instance, the earliest date on
+          which any child event begins is treated as the earliest date of the parent; and the latest
+          date on which any child ends is treated as the latest date of the parent. This process is
+          recursive: there can be parent events that are themselves children of others. Although we
+          performed this reasoning by parsing the RDF model in memory, it is hoped that the same
+          effect could be made with Web Ontology (OWL) statements. 
+          <div id="figure02" class="figure"><a href="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure02.jpg" rel="external"><img src="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure02.jpg" alt="The process stack of Heml"/></a><div class="caption"><div class="label">Figure 2. </div>Timeline View of "Top-Level" Events</div><div class="caption"><div class="label">Figure 2. </div>Top-level events in an RDF dataset accumulated with Semantic Mediawiki for a
+              first-year Ancient History course</div></div><a href="#figure02">Figure 2</a> is a
+          timeline generated entirely from top-level parent events encoded in the wiki. This
+          provides the user with a more comprehensible view of the data.
+        </div><div class="counter"><a href="#p25">25</a></div><div class="ptext" id="p25"> Furthermore, in some future system that provides an appropriate control interface, the
+          user could "open" these composite events and explore more deeply the nested layers
+          therein. <a href="#figure03">Figure 3</a> is an expanded view of the "Samnite Wars" event drawn in
+          the top right corner of <a href="#figure02">Figure 2</a> and whose encoding appeared in <a href="#example03">Example 3</a>. 
+                  <div id="figure03" class="figure"><a href="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure03.jpg" rel="external"><img src="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure03.jpg" alt="The process stack of Heml"/></a><div class="caption"><div class="label">Figure 3. </div>Graphical Timeline Representing the Children Events of the "Samnite Wars"
+              Top-Level Event </div><div class="caption"><div class="label">Figure 3. </div>The events which composed the "Samnite Wars" top-level event in in <a href="#figure02">Figure 2</a> are here shown individually</div></div></div></div><div class="div div1"><h2 class="head">HemlRDF and the CIDOC-CRM</h2><div class="counter"><a href="#p26">26</a></div><div class="ptext" id="p26">One of the most exciting possibilities we anticipated in the historical RDF realm was
+          visualizing CIDOC-CRM data through Heml tools. Because the CIDOC-CRM defines
+          objects in terms of the events they undergo, CIDOC-CRM potentially is  a treasure trove of
+          well-encoded events related to material culture. Robert Kummer of the Perseus Project
+          kindly provided us with the Perseus art and archaeology database encoded in RDF/XML. <a href="#example04">Example 4</a> is a small portion of this, in which the item known as 'BCMA
+          1919.58.81' is declared to have been produced no earlier than 480 BC.</div><div id="example04" class="example"><blockquote class="eg"><pre><tt>&lt;crm:E12.Production rdf:about="http://perseus.tufts.edu/Production_of_BCMA_1919.58.81"&gt;
+  &lt;dc:title&gt;Production of BCMA 1919.58.81&lt;/dc:title&gt;
+     &lt;crm:P4F.has_time-span&gt;
+       &lt;crm:E52.Time-Span&gt;
+         &lt;crm:P82F.at_some_time_within&gt;
+           &lt;crm:E61.Time_Primitive rdf:about="http://perseus.tufts.edu/date/-480"/&gt;
+ <span class="hi bold">             &lt;hemlRDF:SimpleTime rdf:dataype="http://www.w3.org/2001/XMLSchema#gYear"&gt;-480&lt;/hemlRDF:SimpleTime&gt;</span>
+          &lt;/crm:P82F.at_some_time_within&gt;
+            &lt;crm:P2F.has_type rdf:resource="http://perseus.tufts.edu/starts_with"/&gt;
+            &lt;crm:P3F.has_note&gt;ca.&lt;/crm:P3F.has_note&gt;
+       &lt;/crm:E52.Time-Span&gt;
+     &lt;/crm:P4F.has_time-span&gt;
+        </tt></pre></blockquote><div class="caption"><div class="label">Example 4. </div>Perseus CIDOC-CRM Data With Added Elements</div></div><div class="counter"><a href="#p27">27</a></div><div class="ptext" id="p27">Note that the non-heml date elements encode time using a URI. Since the purpose of
+          CIDOC-CRM is to identify and coordinate the resources, this is a wholly appropriate use.
+          However, any RDF application that is acting on this as a date, Heml included, will need to
+          access it as a literal, preferably with appropriate datatyping. We used Perl regex
+          to insert a sister element to the <span class="monospace">Time_Primitive</span>. Since this might not always
+          be easy to do, developers of CIDOC-CRM data who wish to explore the data in systems like
+          Heml would be well advised also to generate literals for dates and locations that employ standard datatypes such as
+        the <span class="monospace">xsd:gYear</span> illustrated above.</div><div class="counter"><a href="#p28">28</a></div><div class="ptext" id="p28">A SPARQL query — available in our SVN server — transforms the rest of the CIDOC-CRM
+          into HemlRDF, which then can be processed by the visualization tools and viewed alongside
+          events encoded in other schemas.</div></div><div class="div div1"><h2 class="head">Heml's Future</h2><div class="counter"><a href="#p29">29</a></div><div class="ptext" id="p29"> From its inception, the XML-based Heml has used the Apache Cocoon Web service framework
+          to store data, to set controller values and to transform data into the views shown above.
+          In the experiments regarding the potential of RDF illustrated above, we grafted
+          the <a class="ref" href="http://jena.sourceforge.net/" onclick="window.open('http://jena.sourceforge.net/'); return false">Jena RDF parser</a> into this system,
+          using it as a means of down-converting Heml RDF data into the XML format around which the
+          Heml Web service framework grew.<a class="noteRef" href="#d22963e614">[9]</a> The resulting system and its critical components are illustrated in <a href="#figure04">Figure 4</a>. This is a heavy-weight, server-side toolkit out of keeping
+          with modern trends in Web software. Although the project strives to make its software
+          freely available through GPL licensing, the general effectiveness of Heml has been reduced
+          because of the project's server-side orientation. 
+                  <div id="figure04" class="figure"><a href="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure04.jpg" rel="external"><img src="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure04.jpg" alt="The process stack of Heml"/></a><div class="caption"><div class="label">Figure 4. </div>Block Diagram of the Components of the Current (v 0.7.2) Heml Server Software</div><div class="caption"><div class="label">Figure 4. </div>The Current Heml Software Relies on the Client-Side XML Pipeline Technologies
+              of Apache Cocoon</div></div></div><div class="counter"><a href="#p30">30</a></div><div class="ptext" id="p30">Since the advanced features of Heml described above will require RDF technologies, our
+          project proposes next to remove the XML format entirely from its processing pipeline.
+          Ideally, we wish to follow the general trends of Web computing and pass all processing
+          over to the client; it will occasionally call its server for additional RDF data. The
+          proposed architecture is illustrated in <a href="#figure05">Figure 5</a>. <div id="figure05" class="figure"><a href="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure05.jpg" rel="external"><img src="http://www.digitalhumanities.org/dhq/vol/3/1/000026/resources/images/figure05.jpg" alt="The process stack of Heml"/></a><div class="caption"><div class="label">Figure 5. </div>Block Diagram of the Components of the Projected Heml Software</div><div class="caption"><div class="label">Figure 5. </div>Future Heml Software Development Will Aim to Do All Processing on the
+            Client</div></div> 
+          Although its data store and communication are modelled in RDF, this system still
+          can consume any (non-RDF) XML that is of historical interest, such as the biographical P5
+          TEI tags. An appropriate XSLT stylesheet converts such materials to XML-encoded RDF.
+          Finally, since it appears that declarative animation in the SVG format is being abandoned,
+          Heml will explore other vector graphics formats and likely use the popular cross-platform
+          Flex3 platform from Adobe. We are also adopting  of third-party visualization
+          tools that have arisen in recently, such as <a class="ref" href="http://simile.mit.edu/timeline/" onclick="window.open('http://simile.mit.edu/timeline/'); return false">Simile Timeline</a> and the 
+          <a class="ref" href="http://www.openlayers.org/" onclick="window.open('http://www.openlayers.org/'); return false">OpenLayers</a> mapping
+          suite.</div><div class="counter"><a href="#p31">31</a></div><div class="ptext" id="p31">The combination of the SPARQL query language and RDF is reasonably powerful, but it lacks some temporal capabilities which we have had 
+          to add through extension functions written for the Joseki SPARQL server engine. For instance, while the SPARQL specification permits the 
+          query to request a response that is ordered by one or more datatyped values, the only temporal datatype that it will order in this way is 
+          <span class="monospace">xsd:DateTime</span>, that is, dates specified to the second; the specification does not indicate how to order dates specified to 
+          the year or day, much less to compare between these datatypes. Our extension function uses <a class="ref" href="http://jena.hpl.hp.com/~afs/sparql-update.html" onclick="window.open('http://jena.hpl.hp.com/~afs/sparql-update.html'); return false">SPARQL Update</a> 
+          to apply to the in-memory RDF graph a starting and ending <span class="monospace">xsd:DateTime</span> corresponding
+          to the beginning and ending of the chronological ranges indicated by these other datatypes. Further improvements in chronological analysis could
+          be made through the use of the CIDOC-CRM's predicates based on Allen temporal logic [<a class="ref" href="#allen1983">Allen 1983</a>] and further use of SPARQL/Update.<a class="noteRef" href="#d22963e662">[10]</a></div><div class="div div2"><h3 class="head">Projected Work</h3><div class="counter"><a href="#p32">32</a></div><div class="ptext" id="p32">Finally, we plan to undertake the automated discovery of references to historical events
+            in unexplored digitized texts. We can expect these texts to be created in ever-increasing
+            numbers, either by large-scale endeavours like the Open Archive Initiative, by the Google
+            Books project, or through local efforts such as the one described in [<a class="ref" href="#carrera2005">Carrera 2005</a>], which become more practical as improved Optical Character Recognition
+            software is developed in large-scale endeavours. The method described below was inspired
+            by Greg Crane, whose published thoughts on the topic began in <span class="error"><a class="ref" href="#crane2006">#crane2006</a></span>.</div><div class="counter"><a href="#p33">33</a></div><div class="ptext" id="p33"><span class="error"><a class="ref" href="#smith2002">#smith2002</a></span> and the work of the <a class="ref" href="http://www.timeml.org/" onclick="window.open('http://www.timeml.org/'); return false">TimeML</a> group show how effectively extracted named
+            entities and natural language processing techniques can be used to identify events.
+            While these natural language processing approaches discover hitherto unidentified events
+            — typically from newspaper articles — 
+            we intend to  apply some of the same machine
+            learning techniques to discover references to <em class="emph">canonical</em> events,
+            already encoded and stored in HemlRDF. (Such canonical events would be extracted from
+            standard reference works.) This system thus could train linear classifiers with the persons and places associated with an event, as well as other additional features encoded in HemlRDF. For instance, the appearance of a reference to
+            a primary source already associated with an event would be a strong indication that that
+            event is being discussed.  While in some disciplines it would be a considerable task to
+            accurately identify such references with the one on record in the RDF database, Smith's
+            work on <a class="ref" href="http://chs75.harvard.edu/projects/diginc/techpub/cts" onclick="window.open('http://chs75.harvard.edu/projects/diginc/techpub/cts'); return false">Canonical
+              Text Services</a> promises to simplify the task. The event's label will also serve as a useful feature, especially if it were parsed with the <a class="ref" href="http://www.w3.org/2001/sw/bestpractices/wnet/wn-conversion.html" onclick="window.open('http://www.w3.org/2001/sw/bestpractices/wnet/wn-conversion.html'); return false">Wordnet</a> database, which itself is now available in a RDF/OWL format.</div></div></div><div class="div div1"><h2 class="head">Conclusion</h2><div class="counter"><a href="#p34">34</a></div><div class="ptext" id="p34"> RDF technologies are providing Heml with several new avenues for research and a plan for
+          reinventing its means of delivering historical visualizations. If it is true that "...people have achieved their humanity in part by attaining a fuller
+            comprehension of their own place in time and space" <span class="error"><a class="ref" href="#clark1992">#clark1992</a></span>, we might hope that the
+          historical potential of the Web will some day give us an unprecedented understanding of
+          our place in time and a greater sense of our own humanity.</div></div><div class="div div1"><h2 class="head">Acknowledgements</h2><div class="counter"><a href="#p35">35</a></div><div class="ptext" id="p35">The RDF data in this paper was produced through a Curricular Innovation Grant at Mount
+          Allison University. The National Research Council of Canada funded the development of
+          CIDOC-CRM and Heml XML/RDF bridging code through its Industrial Research Assistance
+          Program.</div></div></div></div><div id="notes"><h2>Notes</h2><div class="endnote" id="d22963e137"><span class="noteRef">[1]</span>It might be observed that since <a class="ref" href="http://www.wikipedia.org/" onclick="window.open('http://www.wikipedia.org/'); return false">Wikipedia</a>
+            has made great strides in organizing historical information on the Web, the (seemingly
+            inevitable) continued growth of this resource will fulfil this goal. However, as an
+            encyclopedia, Wikipedia does not aim to be exhaustive. Its <a class="ref" href="http://en.wikipedia.org/wiki/wikipedia:notability" onclick="window.open('http://en.wikipedia.org/wiki/wikipedia:notability'); return false">notability guidelines</a>
+            rightly forbid a great deal of material to which historians might wish to have ready
+            access. Moreover even those Wikipedia article which do explain historical events cannot
+            comprise exhaustive lists of references, secondary sources and other evidence. As
+            described later in this paper, the Heml Project has has good experiences using the <a class="ref" href="http://meta.wikimedia.org/wiki/semantic_mediawiki" onclick="window.open('http://meta.wikimedia.org/wiki/semantic_mediawiki'); return false">Semantic MediaWiki</a>
+            extension to its <a class="ref" href="http://www.mediawiki.org/wiki/mediawiki" onclick="window.open('http://www.mediawiki.org/wiki/mediawiki'); return false">Mediawiki</a> software as a
+            means of RDF data entry. <br/><br/></div><div class="endnote" id="d22963e154"><span class="noteRef">[2]</span>[<a class="ref" href="#carrera2002">Carrera 2002</a>]
+          defines the set of "cultural semantics" as those concept which requires the localization
+          of language and terminology. <span class="error"><a class="ref" href="#drucker">#drucker</a></span> make it clear that the problem of time-keeping and
+          calendars, personal or collective, should be added to the list of "cultural
+        semantics."</div><div class="endnote" id="d22963e167"><span class="noteRef">[3]</span>The <a class="ref" href="http://ecai.org/" onclick="window.open('http://ecai.org/'); return false">Electronic Cultural Atlas Initiative</a> has developed a coordinated network of databases, whose limited access helps to
+            ensure the authority and quality of the aggregated data. A windows application is
+            available for entering conforming data, and the excellent <a class="ref" href="http://www.timemap.net/" onclick="window.open('http://www.timemap.net/'); return false">TimeMap</a> software produces rich historical GIS
+            visualizations in the client's browser.<br/><br/></div><div class="endnote" id="d22963e232"><span class="noteRef">[4]</span>This precludes the use of the exhaustive representation of temporal expressions in
+              natural language that the <a class="ref" href="http://timeml.org/" onclick="window.open('http://timeml.org/'); return false">TimeML</a> markup language
+              provides.<br/><br/></div><div class="endnote" id="d22963e357"><span class="noteRef">[5]</span>See the timeline views of the <span class="monospace">columbia_accident</span> and
+            <span class="monospace">greek_prehistory</span> at <a class="ref" href="http://www.heml.org/" onclick="window.open('http://www.heml.org/'); return false">http://www.heml.org</a> for examples of very brief and very long events rendered in
+            this view.<br/><br/></div><div class="endnote" id="d22963e433"><span class="noteRef">[6]</span>Tim Berners-Lee's <a class="ref" href="http://www.w3.org/2000/10/swap/primer.html" onclick="window.open('http://www.w3.org/2000/10/swap/primer.html'); return false">Primer</a>
+            on RDF is a good introduction for those new to the subject.<br/><br/></div><div class="endnote" id="d22963e459"><span class="noteRef">[7]</span> Two widely recommended means of RDF reification that appear to be sufficient for Heml
+        are the appropriate use of <a class="ref" href="http://www.w3.org/tr/rdf-syntax-grammar/#section-syntax-reifying" onclick="window.open('http://www.w3.org/tr/rdf-syntax-grammar/#section-syntax-reifying'); return false"><span class="monospace">rdf:ID</span></a>
+          and <a class="ref" href="http://www.w3.org/tr/swbp-n-aryrelations/#example1" onclick="window.open('http://www.w3.org/tr/swbp-n-aryrelations/#example1'); return false">predicate subclassing</a>. For our purposes, as for most humanists',
+          the choice will 
+        depend on support for these in query languages and their implementation. 
+      <br/><br/></div><div class="endnote" id="d22963e477"><span class="noteRef">[8]</span>In
+            particular, since Semantic Media Wiki treats each node is an article, nodes which are
+            usually treated as "blank nodes" in RDF are difficult to deal with in this Wiki
+            extension.</div><div class="endnote" id="d22963e614"><span class="noteRef">[9]</span>While appropriate XML can be converted to RDF with an XSLT transformation
+              (and the Heml Project has therefore provided such a transformation for many years),
+              the opposite is not true: there is no XML-based tool that can reliably convert RDF (in
+              its standard XML format) into a sister, non-RDF, XML format.<br/><br/></div><div class="endnote" id="d22963e662"><span class="noteRef">[10]</span>It is also likely that the 
+              temporal <a class="ref" href="http://protege.cim3.net/cgi-bin/wiki.pl?swrltemporalbuiltins" onclick="window.open('http://protege.cim3.net/cgi-bin/wiki.pl?swrltemporalbuiltins'); return false">built-in fuctions</a> for  SWRL provided with the 
+              <a class="ref" href="http://protege.stanford.edu/" onclick="window.open('http://protege.stanford.edu/'); return false">Protégé</a> ontology editor could be modified for use as extension functions in SPARQL queries.<br/><br/></div></div><div id="worksCited"><h2>Works Cited</h2><div class="bibl fallback"><span class="ref" id="allen1983"><!-- close -->Allen 1983</span> Allen, J."Maintaining knowledge about temporal intervals". 
+      <cite class="title italic">Communications of the ACM</cite>. New York, NY, 
+      1983  26.11.</div><div class="bibl fallback"><span class="ref" id="carrera2002"><!-- close -->Carrera 2002</span> Carrera, F."Challenges for a Semantic Web".
+      <cite class="title italic">Proceedings of the International Workshop on the Semantic Web
+        2002</cite>. Hawaii, May 7, 2002. pp. 16-22.</div><div class="bibl fallback"><span class="ref" id="carrera2005"><!-- close -->Carrera 2005</span> Carrera, F."Making history: an emergent system for the
+      systematic accrual of transcriptions of historic manuscripts"<cite class="title italic">Document Analysis and Recognition, 2005. Proceedings. Eighth
+        International Conference on</cite>129 Aug.–1 Sept. 2005 543–547.</div><div class="bibl fallback"><span class="ref" id="clark1992a"><!-- close -->Clark 1992</span> Clark, G.<cite class="title italic">Space, Time and Man:
+        A Prehistorian's View</cite>. New York, 1992.</div><div class="bibl fallback"><span class="ref" id="crane2006f"><!-- close -->Crane 2006</span> Crane, G."What Do You Do with A Million Books?"<cite class="title italic">D-Lib Magazine</cite>. 12.3March
+        2006.</div><div class="bibl fallback"><span class="ref" id="drucker2004"><!-- close -->Drucker and Noviskie 2004</span> Drucker, J. and Noviskie, B."Speculative Computing: Aesthetic Provocations in Humanities Computing". 
+      <cite class="title italic">A Companion to Digital Humanities</cite>. Susan Schreibman,
+      Ray Siemens and John Unsworth ed. New
+        York, 2004.</div><div class="bibl fallback"><span class="ref" id="nakahira2007"><!-- close -->Nakahira 2007</span> Nakahira, K. et al. "The Use of XML to Express a Historical Knowledge Base". 
+      <cite class="title italic">WWW 2007</cite>. Banff, Alberta, 
+      2007.</div><div class="bibl fallback"><span class="ref" id="robertson2006"><!-- close -->Robertson
+      2006</span> Robertson, B."Visualizing An
+        Historical Semantic Web with Heml". <cite class="title italic">Proceedings of the
+          2006 W3C Conference</cite>. May 23-26, 2006Edinburgh, p. 99.</div><div class="bibl fallback"><span class="ref" id="robertson2002"><!-- close -->Robertson 2002</span> Robertson, B."An Overview of the Historical Event Markup and Linking Project". 
+      <cite class="title italic">Dalla Fonte all Rete: Il linguaggio XML e la codifica dei documenti
+      storic, archeologici e archivistici</cite>. Centro di Ricerche Informatiche per i 
+        Beni Culturali,Pisa. 12.1, 2002.</div><div class="bibl fallback"><span class="ref" id="robertson2004"><!-- close -->Robertson 2004</span> Robertson, B."Improving Ancient History Online with Heml". C.
+        Blackwell, R. Scaife ed. <cite class="title italic">Classics@</cite>. 2, 2004.</div><div class="bibl fallback"><span class="ref" id="smith2002a"><!-- close -->Smith 2002a</span> Smith, D."Detecting Events with Date and Place Information in Unstructured Text".
+      <cite class="title italic">International Conference on Digital Libraries. Proceedings of
+        the 2nd ACM/IEEE-CS Joint conference on Digital Libraries.</cite>10, 2002. 191-196.</div><div class="bibl fallback"><span class="ref" id="thaller1991"><!-- close -->Thaller
+      1991</span> Thaller, M."The Historical Workstation
+        Project"<cite class="title italic">Computers and the Humanities</cite>. 25, 149-162,
+      1991.</div></div><div class="toolbar"><a href="../index.html">2009 3.1</a>
+             | 
+            <a rel="external" href="000026.xml">XML</a>
+            | 
+            <a href="#" onclick="javascript:window.print();" title="Click for print friendly version">Print Article</a></div></div><script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'dhquarterly'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script><div id="comments"><div id="disqus_thread"/><script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'dhquarterly'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+    var disqus_identifier = '000026';
+    var disqus_url = '000026.html';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><div id="footer"> 
+            URL: http://www.digitalhumanities.org/dhq/vol/3/1/000026/000026.html<br/>Last updated:
+            <script type="text/javascript">
+                var monthArray = new initArray("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                var lastModifiedDate = new Date(document.lastModified);
+                var currentDate = new Date();
+                document.write(" ",monthArray[(lastModifiedDate.getMonth()+1)]," ");
+                document.write(lastModifiedDate.getDate(),", ",(lastModifiedDate.getFullYear()));
+            </script><br/> Comments: <a href="mailto:dhqinfo@digitalhumanities.org" class="footer">dhqinfo@digitalhumanities.org</a><br/> Published by:
+            <a href="http://www.digitalhumanities.org/" class="footer">The Alliance of Digital Humanities Organizations</a><br/>Affiliated with: <a href="http://llc.oxfordjournals.org/">Literary and Linguistic Computing</a><br/> Copyright 2005 - <script type="text/javascript">
+                document.write(currentDate.getFullYear());</script><br/> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons
+                    Attribution-Noncommercial-No Derivative Works 3.0 License</a><br/><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png"/></a></div></div></div></body>
+<!-- Mirrored from www.digitalhumanities.org/dhq/vol/3/1/000026/000026.html by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 16 May 2015 13:06:59 GMT -->
+</html>
