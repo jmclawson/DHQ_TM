@@ -14,7 +14,9 @@ filelines <- readLines(data.dir)
 # editor
 # special issue or not
 # institution
+# keywords
+# articletype
 
 authorgrep <- # figure out general expression here
-author <- grep("^[^a-z]*$", filelines, value=FALSE) # gather line contents for author
-# author <- grep("^[^a-z]*$", filelines, value=FALSE) # gather vector addresses for author
+author <- grep(authorgrep, filelines, value=FALSE) # gather line contents for author
+# author <- grep(authorgrep, filelines, value=FALSE) # gather vector addresses for author
