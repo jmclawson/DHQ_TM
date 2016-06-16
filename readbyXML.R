@@ -26,7 +26,7 @@ for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
   doc.title.prel <- xmlElementsByTagName(docextract[[1]],"title", recursive=TRUE)
-  doc.title.fix <- gsub("\\s+|\\s+|\\/","",xmlValue(doc.title.prel[[1]])) #
+  doc.title.fix <- gsub("\\s+|\\s+|\\/|:","_",xmlValue(doc.title.prel[[1]])) #
   doc.title <- c(doc.title,doc.title.fix)
 }
 
