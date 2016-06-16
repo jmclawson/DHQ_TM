@@ -5,6 +5,7 @@
 ## the original lda-c implementation by David Blei. 
 ## See https://www.cs.princeton.edu/~blei/lda-c/index.html
 
+options(java.parameters = "-Xmx4g")
 source("functions/lda.R")
 source("functions/import.R")
 

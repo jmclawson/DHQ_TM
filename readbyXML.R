@@ -56,5 +56,5 @@ for (file in 1:length(filelist)) {
   }
   filename <- paste(doc.title[file],".txt",sep="")
   filename <- paste(folder.target.main,filename,sep="/")
-  write(doc.body,file=filename,append=FALSE,sep="")
+  write(doc.body[file],file=filename,append=FALSE,sep="")
 }
