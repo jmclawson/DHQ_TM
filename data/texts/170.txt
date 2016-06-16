@@ -1,0 +1,824 @@
+IntroductionWhen listening to music people often think that sounds
+                        like so-and-so's song or that song sounds
+                        like so-and-so. What is it that triggers people
+                    to make these judgments? Maybe it is the chord progression,
+                    the type of instrument accompaniment, the rhythm, or perhaps
+                    elements that cannot be specifically explained, such as the
+                    impression that the music makes; all of these can have an
+                    effect. However, of the factors that greatly influence these
+                    judgments, the lyrics have the most significant bearing.
+                    There are many factors associated with lyrics that influence
+                    these judgments, such as unique expressions and the visual
+                    effect of the lyrics on a lyric sheet as well as the
+                    repetition of certain words. Of course, it is said that a
+                    song can be attributed to an artist because certain lyrics
+                    are applied to a certain chord progression, but if these are
+                    then separated, there will be cases when it is impossible to
+                    speculate whose song it is. However, in many cases, which
+                    artist a song belongs to can be deduced just by reading the
+                    lyrics. If the individual characteristics of an artist
+                    really are clearly expressed in the lyrics and people do not
+                    notice, then what are these characteristics? Moreover, what
+                    specific factors trigger the intuition people feel which
+                    makes them say this sounds like so-and-so? If we turn our eyes to the situation in modern Japan, there
+                    are in fact not only communities on social networks relating
+                    to singers and
+                        music, but also communities
+                    relating to the lyrics of certain singers. On one of Japan's
+                    foremost music information sites, Barks Global Music
+                            Explorerhttp://www.barks.jp, a feature article
+                    called Ranking of artists with
+                        heart-stopping lyrics is regularly published
+                    .
+                    Whether it is online or offline communities, lyrics are a
+                    subject often touched on by the young generation. The way
+                    people communicate is changing owing to the development of
+                    communication equipment such as cell phones and PCs, and the
+                    resulting spread of systems such as Twitter. People
+                    who are complete strangers and who cannot even see each
+                    other's faces can now communicate just because they have
+                    something in common. Many people have a shared knowledge of
+                    popular song lyrics and are also able to relate to them. It
+                    is thought that when people are receptive to popular music,
+                    one of the most important factors is the lyrics. Popular
+                    lyrics and lyrics people relate with are a useful medium for
+                    analyzing not only the communication between singers and
+                    fans, but also between fans and other fans or, in other
+                    words, the way in which ordinary people communicate with
+                    each other daily. Also in a sociological theory, the lyrics
+                    of popular songs are said to be a good representation of the
+                    tastes and linguistic sensitivity of the people of that
+                    generation. According to Mita ,
+                    popular songs are not just things we listen to, but also
+                    things we hum along and sing along to. In particular,
+                    karaoke has been established as a popular pastime in Japan,
+                    especially for the younger generation, and popular songs
+                    reflect people's feelings, fashions, and their manner of
+                    communication. Many popular arts, such as novels, movies,
+                    and television programs, are used as factors for analyzing
+                    culture and society. However, people connect with these
+                    passively, whereas, even though they are passively imparted,
+                    popular songs are a medium in which people can actively
+                    participate by humming and singing . An individual's writing, such as notes, diaries, and
+                    journals, are also used to analyze a person's lifestyle, but
+                    these are documents that record the specific independent
+                    opinions of an individual person and unlike popular songs,
+                    which are on trend; in other words, they are songs that are
+                    accepted by the majority of the public and contain lyrics
+                    that are also accepted . In this regard, songs
+                    represent the tastes and linguistic sensitivity of the
+                    people of that generation, and are a more appropriate medium
+                    for observing the macroscopic shifts and changes in Japanese
+                    culture. Singer-songwriters are singers that compose their own lyrics
+                    and music and they form one of the major genres in the hit
+                    charts in modern Japan . They
+                    have a long tradition in Japanese music, but they began to
+                    flourish in the 1970s in Japan as a small genre, and since
+                    then, female singer-songwriters have increased the genre's
+                    importance . The message of their
+                    lyrics is very powerful and their impact is significant,
+                    thus singer-songwriters are an extremely interesting subject
+                    matter for lyrical analysis, in particular lyrical analysis
+                    using computational stylistics methods as conducted in this
+                    study, because they are important for investigating the way
+                    in which people in modern Japan communicate. There have been some studies that tried to investigate the
+                    characteristics of language and communication styles from
+                    popular songs, although their methods mainly involved
+                    qualitative analyses of source documents or interviews with
+                    artists and eminent personalities in these fields. Some
+                    studies stressed the importance of investigating the lyrical
+                    characteristics of popular songs, but in fact they focused
+                    only on specific songs or singers for their analyses . Turning our eyes to the field of
+                    computational stylistics, the current scope of research has
+                    expanded considerably with an increasing variety of
+                    available data and the development of natural language
+                    processing techniques. In addition to the conventional
+                    applications such as authorship attribution and genre-based
+                    text classification, computational stylistics methods are
+                    used for various new applications such as authorship
+                    profiling, computational sociolinguistics, and plagiarism
+                    detection 
+                    . These methods must be very
+                    useful for analyzing the textual characteristics of
+                    lyrics. Considering this backdrop, this study uses computational
+                    stylistics methods to analyze popular Japanese songs
+                    composed by Japanese female singer-songwriters over the past
+                    30 years. From the viewpoint of computational stylistics,
+                    the purpose of this study has the following four
+                    characteristics: (a) the number of tokens is considerably
+                    small, (b) several factors (e.g., authors and eras) affect
+                    the textual characteristics, (c) the content as well as the
+                    style can affect the textual characteristics, and (d) we
+                    wanted to obtain linguistically and sociologically
+                    meaningful findings instead of just enhancing the
+                    classification method. We deliberately selected the features
+                    and methods appropriate for our purposes to obtain an
+                    important case study for computational stylistics. We also
+                    attempted to provide useful knowledge for understanding
+                    current Japanese language and communication styles.Data and MethodsDataWe selected 116 songs composed by 10 singer-songwriters
+                        (those who wrote more than 90% of their songs) that
+                        appeared on the Oricon annual top 100 single hit chart
+                            ;  more than five times in the
+                        past 30 years. We collected the text data from Uta Net
+                            (http://www.uta-net.com) and Uta Map (http://www.utamap.com), which are databases
+                        of Japanese popular songs, and excluded the titles,
+                        spaces, and explanatory phrases. We applied
+                        morphological analysis by MeCab (http://mecab.sourceforge.net), a Japanese
+                        morphological analysis system. We calculated the
+                        relative frequencies for each text file, and constructed
+                        a text-feature matrix. Previous authorship attribution studies showed that
+                        function words or character based n-grams provide a more
+                        robust classification performance ; however, we selected
+                        bag-of-words as features due to reason (d), as mentioned
+                        in the Introduction, which states that our purpose is to
+                        obtain linguistically and sociologically meaningful
+                        findings instead of enhancing the classification
+                        performance. We used content words as well as function
+                        words because of the aforementioned reason (a) the
+                        number of tokens is considerably small and (c) the
+                        content as well as the style can affect the textual
+                        characteristics. It is possible to analyze more specific
+                        aspects with analyses that use only function words and
+                        content words. We intend to study these subjects in the
+                        future.Statistical MethodsWhen we considered that several factors affect the
+                        textual characteristics, we first applied the kernel PCA
+                        to the matrix in order to examine the factors affecting
+                        the lyrical characteristics of the songs. We selected
+                        the Gaussian kernel and parameter sigma = 0.1, which
+                        gave the best possible results for interpretation after
+                        attempting several kernels and parameters. Previous
+                        studies used a principal component analysis, a
+                        correspondent analysis, or a factor analysis for these
+                        tasks; however, the kernel PCA sets up kernels and
+                        parameters more flexibly; thus, it is more suitable for
+                        use in preliminary and exploratory research, such as
+                        this paper. Second, we applied random forests machine learning
+                        methods  in order to perform
+                        the classification experiments for the 10 selected
+                        singers. This method has proved the best performance for
+                        authorship attribution in Japanese , and has also been the best
+                        method for similar types of feature extraction tasks
+                            . We analyzed the results of the classification to find
+                        the singers who had special individual lyrical
+                        characteristics (high classification performance) and
+                        those who had common lyrical characteristics (low
+                        classification performance). In addition, we extracted
+                        the important features for classification in order to
+                        find the special distinguishing lyrical characteristic
+                        of every singer-songwriter. Random forests are an improved method of bagging , which is an ensemble
+                        learning method. The purpose of ensemble learning is to
+                        improve the classification performance of previous
+                        statistical methods, such as decision trees, by
+                        repeatedly performing the experiments and calculating
+                        the mean or majority votes of the results. However, the
+                        results will always be identical when the same data is
+                        used to perform these experiments; thus, ensemble
+                        learning methods including bagging usually use bootstrap
+                        samplings from the original data to repeat the
+                        experiments. The major advantage of using random forests
+                        instead of bagging is the extraction of a random subset
+                        from each bootstrapping sample, which enlarges the
+                        variances in bootstrapping samples ; . We first sampled from i cases at random from the
+                        original text-feature matrix M_[i,j] with replacements
+                        to make a bootstrap sample, and we extracted random
+                        subsets of [root j] variables from a bootstrap sample to
+                        make a sample for constructing an unpruned decision
+                        tree. To split the nodes, we used the Gini index
+                        formalized as follows:where p_[tau k] represents the proportion of
+                            data points in region R[tau]assigned to class k (k =
+                            1, ... , K), which vanishes for p_[tau k] = 0 and
+                            p_[tau k] = 1 and has a maximum at p_[tau k] = 0:5
+                            [Bishop 2006]. These sampling, extraction, and
+                            tree-constructing processes were repeated 1000
+                            times, and we constructed a new classifier by a
+                            majority vote of the set of trees. Two-thirds of the
+                            extracted bootstrap samples were used for
+                            constructing the model and the other one-third were
+                            left out for testing the modelThis is called
+                                Out-of-bag tests.
+                   An important characteristic of random forests is that it
+                        returns variable importance (VIacu
+                  ) for the
+                        classification experiments. To calculate variable
+                        importance, we first put down the out-of-bag cases and
+                        counted the number of votes cast for the correct class,
+                        and then randomly permuted the values of variable [root
+                        j] in the out-of-bag cases, and put these cases down the
+                        tree. We subtracted the number of votes for the correct
+                        class in the variable-[root j]-permuted out-of-bag data
+                        from the number of votes for the correct class in the
+                        original untouched out-of-bag data. We calculated the
+                        average of this number over all trees in the forest, and
+                        that number was the raw importance score for variable
+                        [root j]. Finally, we divided the raw score by the
+                        standard error of the variable in the calculation over
+                        all trees, and that number was VIacu
+                   for variable m
+                            ; . VIacu
+                   represents the importance of
+                        variables for classification. This method is
+                        advantageous because this study aims to compare the
+                        contributions of the morphemes rather than achieving the
+                        best performance. This method calculates important
+                        variables directly contributing to the classification in
+                        the experiment; thus, it is most suitable for this
+                        study.Results and DiscussionBasic Data for Selected Singer-songwritersTable 1 shows the year the
+                        selected female singer-songwriters made their debuts and
+                        their ages at those times. The debut years and debut
+                        ages were taken from the official websites of the
+                        respective singer-songwriters. First, we found that the
+                        debut age ranged from the late teens to early 20s. The
+                        average debut age is 20.7. In general, because of the
+                        high profile of Hikaru Utada, the impression is that the
+                        debut age has fallen in recent years. However, these
+                        results indicate that the debut age has thus far barely
+                        changed. Next, if we look at the data by decade, there were three
+                        singer-songwriters in the 1970s who regularly had hit
+                        songs, in the 1990s there were five, and in the 2000s
+                        there were two. In contrast, there were no
+                        singer-songwriters in the 1980s that matched our
+                        selection criteria. In the 1980s, instead of
+                        singer-songwriters, female singers referred to as idols
+                        frequented the popular chart. Around that time, popular
+                        music programs were established on TV and were beginning
+                        to take off and, rather than singer-songwriters who pour
+                        forth their beliefs and feelings in their lyrics, it was
+                        the attractive, generally well-received idols who
+                        attracted sponsors that were popular . In contrast to this, in the
+                        1990s, there was a gathering momentum towards female
+                        social equality and independence, and the number of
+                        women and young people buying music was increasing .As a result, the genre of the
+                        female singer-songwriter seemed to be energized once
+                        more in place of the spectacle of the idol. It can be
+                        said that the results of this study clearly reflect the
+                        changes in Japanese society and the changes in the music
+                        industry.Female singer-songwritersDebut yearDebut ageaiko199823Komi Hirose199226Yumi Matsutoya197318Miyuki Nakajima197523Maki Oguro199222Ai Otsuka200321Ringo Shina199819Mariya Takeuchi197823Hikaru Utada199815YUI200517Basic Characteristics for Selected SongsTable 2 represents the
+                        number of texts, and the mean and standard deviations
+                        with coefficients of variances of the number of tokens
+                        for the 10 singer-songwriters. The number of texts
+                        ranges from 7 to 20, and the mean number of tokens
+                        ranges from 155 to 273. The table shows that Utada and
+                        Nakajima have a large number of songs, whereas Hirose,
+                        Takeuchi and Shina have a small number of songs in our
+                        dataset. It also shows that Hirose generally prefers
+                        short songs, and YUI and Utada have large variances in
+                        the length of their songs. As explained later, this may
+                        be because they preferred English words.Results of basic characteristics. The number of
+                            texts, the mean, standard deviations and
+                            coefficients of variation of the number of tokens
+                            for the 10 singer-songwriters are shown.number of tokensnumber of textsmeans.d.c.v.aiko13217.0849.5922.84Komi Hirose7273.0031.3714.45Yumi Matsutoya13155.3140.5118.66Miyuki Nakajima20211.3035.8216.50Maki Oguro13231.3848.8422.50Ai Otsuka15209.3349.9923.03Ringo Shina9199.7846.1921.28Mariya Takeuchi8199.2548.2222.21Hikaru Utada20235.7051.6923.81YUI10243.1068.6131.61Results on Kernel Principal Component Analysis (Kernel
+                        PCA)Figure 1 and 2 show three dimensional
+                        scatter plots of the first three principal components by
+                        kernel PCA. The results show that the songs by the same
+                        singer are grouped, for example, aiko's songs are
+                        grouped in the upper side, Utada and YUI's songs toward
+                        the right, and Nakajima's songs toward the left. In the
+                        kernel PCA, compared with the factors concerning the
+                        singer, the factors concerning the era are not clearly
+                        observed, which was also true when the release years
+                        were used as labels. The grouping results and a qualitative analysis of the
+                        songs shows that the first principal component includes
+                        the factor of loanwords because Utada and YUI's songs
+                        have many of such words, and the third principal
+                        component includes the factor of pronouns, because
+                        aiko's songs have many special first person pronouns.
+                        However, these three axes are composed of many words,
+                        thus their labeling becomes difficult.Three-dimensional scatter plots of the first three
+                        principal components by kernel PCA. The labels represent
+                        the names of the singer-songwriters. Three-dimensional scatter plots of the first three
+                        principal components by kernel PCA (2). The labels
+                        represent the years of release. Results on Random ForestsTable 3 represents the
+                        confusion matrix constructed by random forests. The
+                        results show that the songs by aiko, Nakajima, and Utada
+                        have high classification performance, whereas those by
+                        Hirose, Oguro, and Matsutoya have low classification
+                        performance. These results also show that the songs by
+                        the first three singer-songwriters have special
+                        individual characteristics among Japanese female
+                        singer-songwriters, while those by the last three
+                        singer-songwriters have common characteristics. It is
+                        certain that the number of texts and the number of
+                        tokens can affect classification performance. However,
+                        aiko, for example, has no special lyrical
+                        characteristics within these textual characteristics;
+                        thus, these results also show the special lyrical
+                        characteristics of the singers.Results of the classification experiment by using
+                            random forests. Confusion matrix and error rates are
+                            shown. The rows represent the original data and the
+                            columns represent the results from the
+                            classification experiments; thus, it represents that
+                            all aiko's songs were recognized from her texts,
+                            whereas none of Hirose's songs were identified from
+                            her lyrics.aikoKomi HiroseYumi MatsutoyaMiyuki NakajimaMaki OguroAi OtsukaRingo ShinaMariya TakeuchiHikaru UtadaYUIerror ratesaiko130000000000.00Komi Hirose00040000301.00Yumi Matsutoya002100000100.85Miyuki Nakajima000190000100.05Maki Oguro00111200800.92Ai Otsuka100201000200.33Ringo Shina10110020400.78Mariya Takeuchi00011002310.75Hikaru Utada000300001700.15YUI00000000550.50Table 4 represents the
+                        results of the top 20 important features obtained from
+                        the classification experiment calculated by random
+                        forests. The results show that the top 20 important
+                        features include many pronouns, final particles, and
+                        auxiliary verbs. The results also show that these words
+                        are particularly important for discriminating the songs
+                        by 10 Japanese female singer-songwriters.Top 20 important features for the classification
+                            experiment. The top 20 important features calculated
+                            by random forests. The definition of VIacu
+                      is
+                            described in the Data and Methods section. rankmorphemesVIacu
+                        1atashi0.01252shi0.0078310.00674watashi0.00595you0.00536da0.00527wo0.00508shiawase0.00479ta0.004510kimi0.004511nante0.003912ii0.003913e0.003814yo0.003615ai0.003216n0.003217tai0.003218nai0.003219kara0.003120koto0.0031 Next, we conducted a classification experiment using the
+                        lyrics of the three singer-songwriters who made their
+                        debut in the 1970s and the lyrics of the seven
+                        singer-songwriters who have made their debut since the
+                        1990s. According to the kernel PCA, differences based on
+                        singer are more significant than those based on the
+                        simple era labels. Therefore, era classification was
+                        conducted according to the debut year of the singer
+                        rather than by decade. For example, in the 1990s there
+                        are of course compositions written by Miyuki Nakajima,
+                        but these are treated as Miyuki Nakajima's compositions.
+                            Table 5 shows the
+                        confusion matrix and Table
+                            6 shows the top 20 important features in the
+                        experiment. We found that a number of trends can be
+                        identified in Table 5
+                        because there are many songs from the new era, but a
+                        moderate classification was obtained from the confusion
+                        matrix results. Many function words, such as wa
+                        and wo and many personal pronouns, such as
+                            watashi (I), are included in Table 6 as well as in Table 4. As we shall see
+                        later, the other words of high importance in the
+                        singer-songwriter classification, those that contribute
+                        significantly to the classification, also achieve high
+                        values in the classification according to era.Results of the classification experiment by using
+                            random forests. Confusion matrix and error rates are
+                            shown.The rows represent the original data and the
+                            columns represent the results from the
+                            classification experiments.oldnewerror ratesold11300.73new0870Top 20 important features for the two-class
+                            (old/new singer-songwriters) classification
+                            experiment. The top 20 important features calculated
+                            by random forests. The definition of VIacu
+                      is described in the
+                        Data and Methods section.rankmorphemesVIacu
+                        1wo0.008242watashi0.008193da0.005454ai0.005015hitori0.004786ha0.004207nagare0.003758shi0.003069tai0.0030210atashi0.0029011?0.0028712koto0.0023213tachi0.0018814hitotsu0.0018715machikado0.0018516hitomi0.0017417n0.0016218no0.0015419chigai0.0013820yuku0.00136Table 7 represents the top
+                        20 important features for discriminating the 10
+                        singer-songwriters. Next, we discuss the results in the
+                        last table together with the qualitative analysis
+                        results. In particular, the analysis for Kohmi Hirose,
+                        Yumi Matsutoya, and Maki Ohguro, for whom the
+                        classification experiment performance was poor, was
+                        supplemented by a mainly qualitative study of their
+                        lyrics.Top 20 important features for distinguishing the
+                            10 singer-songwriters. The top 20 important features
+                            calculated by random forests. The definition of VIacu
+                      is
+                        described in the Data and Methods section.aikoKomi HiroseYumi MatsutoyaMiyuki NakajimaMaki OgurorankmorphemesVIacu
+                        morphemesVIacu
+                        morphemesVIacu
+                        morphemesVIacu
+                        morphemesVIacu
+                        1atashi0.0558Love0.0124wo0.0193shi0.0261shi0.00582you0.0379hito0.0111ai0.0092da0.0202kara0.00433koto (kanji)0.0227eien0.0073atashi0.0076e0.0178atashi0.00404hodo0.0077watashi0.0072da0.0073yo0.0151you0.00395watashi0.0065kimi0.0049ja0.0072atashi0.0133kako0.00346hikari0.0063ni0.0043nante0.0059tai0.0127ni0.00277me0.0061wo0.0036mi0.0055tachi0.0116suru0.00248hoho0.0055wa0.0035watashi0.0052ni0.0098wo0.00239mo0.0051cha0.0035kimi0.0050wo0.008010.002010omoi0.0049purezento0.0034nai0.0044watashi0.0078kimi0.001811hure0.0042kitto0.0030ba0.0038ta0.0076u0.001712shi0.0039shi0.0030ii0.0035ii0.0072mi0.001613ta0.0038atashi0.0028omoi0.0033wa0.0068datte0.001514kuchibiru0.0037kure0.0027toki0.0032kara0.0063n0.001415ai0.0032ta0.0026koto (hiragana)0.0032hito0.0061mata0.001316...0.0028nante0.0024suru0.0031?0.0060ga0.001317anata0.0027chaa0.0023toki0.0029mo0.0057sukoshi0.001318ii0.0025ga0.0022e0.0028n0.0054ai0.001219datte0.0024shiawase0.0021yo0.0028nai0.0051yuku0.001220you0.0024ai0.0020shi0.0026anata0.0050shiawase0.0011Ai OtsukaRingo ShinaMariya TakeuchiHikaru UtadaaikorankmorphemesVIacu
+                        morphemesVIacu
+                        morphemesVIacu
+                        morphemesVIacu
+                        morphemesVIacu
+                        110.0439atashi0.0113watashi0.0143kimi0.0141nante0.02132shiawase0.0280i0.0106machi0.0123I0.0097desyo0.01653atashi0.0144da0.0103shi0.0117you0.0091n0.0109420.0105ta0.0103koi0.0104ii0.0091?0.00755watashi0.0099hito0.0086futari0.0097atashi0.0079no0.00746mo0.0073watashi0.0078omoi0.0078'0.0069ta0.00727koto (katakana)0.0067sono0.0069da0.0074baby0.0062tte0.00658nai0.0066ii0.0062ta0.0072doko0.0058watashi0.00539wo0.0063desyo0.0052ii0.0068n0.0053nai0.005010da0.0063nante0.0051wo0.0065shi0.0047waka0.004411suru0.0063you0.0051atashi0.0063anata0.0041hito0.004012shi0.0062seimei0.0048deatt0.0061te0.0041deki0.003913kimi0.0059re0.0045kanji0.0058nai0.0036da0.003714naa0.0055wo0.0043'0.0053kokoro0.0033atashi0.003715nante0.0054kimi0.0043wa0.0053ai0.0033wo0.003616to0.0052tai0.0040hontou0.0052can0.0030mo0.003017tai0.0052kokoro0.0040tai0.0049shiawase0.0028yoru0.002918ai0.0050nado0.0038nai0.0046toki0.0026ja0.002819mi0.0047te0.0037eran0.0044sukoshi0.0026tai0.002720na0.0044yo0.0036denwa0.0043datte0.0025anata0.0024Discussion of Individual Singer-SongwritersaikoThe first person pronoun atashi (I) was the most important
+                        feature, although watashi (I) is usually used in
+                        spoken Japanese. Pronouns have strong discriminant power
+                        in authorship attribution ,
+                            ; thus, we inferred
+                        that this lyrical characteristic of her songs led to the
+                        lowest error rates in Table
+                            2. In addition, words representing parts of
+                        the body, such as me
+                            (eyes), hoho
+                            (cheeks), and kuchibiru (lips) appeared at 7, 8
+                        and 14 ranks, and we inferred that they show her special
+                        lyrical characteristic. This is apparent in her use of
+                        the following lyrics for example, 夏髪が頬を切る(natsukami ga hoho wo
+                                kiru; summer hair brushes against my
+                            cheeks) (KissHug),
+                                赤く染まる指先や頬を(akaku
+                                somaru yubisaki ya hoho wo; your
+                            blushing fingertips and cheeks)
+                        (スター[star]),
+                                唇かんで指で触ってあなたとのキス
+                                確かめてたら(kuchibiru kande yubi de sawatte anata
+                                tono kisu tashikame te tara; bite my
+                            lip, touch it with my finger, when I go over kissing
+                            you in my mind) (ボーイフレンド
+                  [Boyfriend]), 頬は熱くなってたまに悲しくもなった(hoho wa atsuku natte tamani
+                                kanashiku mo natta; my cheeks burned
+                            hot and now and again I felt sad (アンドロメダ[Andromeda]) and
+                                三角の耳した天使は恋のため息聞いて目を丸くしたあたしを指さし(sankaku no
+                                mimishita tenshi wa koi no tameiki kiite me wo
+                                maruku shita atashi wo yubisashi; the
+                            angel with the triangular ears heard a sigh of love
+                            and pointed at me, my eyes wide (花火
+                  [Hanabi;
+                            Firework]). Many other words representing
+                        parts of the body that are not in the ranking of
+                        important words, such as tsume (nails), kami (hair),
+                                yubi
+                            (fingers), mune (chest), mimi
+                            (ears), and te (hands), are apparent in
+                        such lyrics as, あたしの髪が揺れる距離の息づかいや きつく握り返してくれた手はさらに
+                                消えなくなるのにね(atashi no kami ga yureru kyori no
+                                ikidsukai ya kitsuku nigirikaeshite kureta te wa
+                                sarani kienaku naru nonine; your
+                            breath and the hand that gripped me tightly does not
+                            fade with a shake of my hair (アンドロメダ[Andromeda]) and
+                                深爪したことも (fukadsume
+                                shita koto mo; and a nail cut too
+                            close (キラキラ[Kirakira;
+                            sparkle]).Kohmi HiroseMany content words are ranked in the top ranked words.
+                        Contrary to function words, content words were known to
+                        serve as noises for better classification between
+                        authors [; therefore, we
+                        inferred that this lyrical characteristic of her songs
+                        led to high error rates shown in Table 2. It can be inferred that many of
+                        Hirose's song lyrics concern the theme of love because
+                        the words love and ai (love) appear as one of the
+                        important words. It is thought that the word love
+                        ranked top because there are many phrases that contain
+                            love applied to sections where the lyrics are
+                        repeated, such as Fall in Love ロマンスの神様 この人でしょうか(Fall in Love
+                                romansu no kamisama
+                                konohito de shou ka?; fall in love, is
+                            this person the God of romance? (ロマンスの神様 [Romance no kamisama; God of
+                            Romance]), 私だけにWhite Love Song 歌ってほしいの(watashidakeni White Love
+                            Song utatte hoshii
+                                no; I want you to sing a white love
+                            song just for me (ゲレンデがとけるほど恋したい
+                                [Garendega tokeru hodo koi shitai; I
+                            want to love you in a way that will melt the ski
+                            slopes]) and ずっとEternal Love (zutto Eternal Love;
+                            forever, eternal love) (Promise). In contrast to the other artists,
+                        Kohmi Hirose was the only artist to have the word love
+                        in romanized writing in the top ranked words.
+                        Furthermore, Kohmi Hirose conjures a powerful image of
+                            winter in Japan, but not a single word
+                        relating to winter featured in the top ranking words, an
+                        unexpected result.Yumi MatsutoyaThe particle wo
+                        that represents the object is ranked in the top ranked
+                        words. Examples of lyrics that use wo include,
+                                初めて言葉を交わした日のその瞳を忘れないで(Hajimete kotoba wo kawashita hi no
+                                sono hitomi wo wasure nai de; don't
+                            forget the way your eyes were when we spoke for the
+                            first time) (守ってあげたい(Mamotte agetai; I want
+                            to protect you)) and 夢をくれし君の眼差しが肩を抱く
+                                (yumewo kureshi kimi no
+                                manazashi ga kata wo daku; the
+                            protective gaze of the one who dreams of me wraps
+                            around my shoulders) (春よ、来い[Haruyo, koi; spring
+                            comes]). In addition it can be inferred that
+                        many of Yumi Matsutoya's lyrics concern love because the
+                        word ai (love)
+                        appears in the top rankings. Picking out several lyrics
+                        as they appear reveals lyrical themes concerning love.
+                        For example, 愛をくれし君のなつかしき声がする(ai wo kureshi kimi no natsukashiki
+                                koe ga suru; I hear the longed-for
+                            voice of the one who loves me) (春よ、来い[Haruyo,
+                                koi; spring comes]) and
+                                私を愛したことを後悔はしていないかしら(watashi wo aishita koto wo koukai
+                                ha shite inai kashira; I wonder if you
+                            regret loving me) (輪舞曲 (Rondo)).Miyuki NakajimaHiragana appeared at all except 10, 15 and 16 ranks, and
+                        many of Hiragana words were function words, though other
+                        singer-songwriters included more content words. We
+                        inferred that she had a special lyrical characteristic
+                        on the basis of the function words rather than the
+                        content words. Function words have strong discriminant
+                        power in authorship attribution , ; thus, we inferred that
+                        this lyrical characteristic of her songs led to low
+                        error rates shown in Table
+                            2.Maki OhguroCompared to the other artists, there are few
+                        characteristic words and also the classification
+                        performance is poor. We conclude that either Maki Ohguro
+                        is an artist with few characteristic words or she is an
+                        artist with an extensive vocabulary who does not use
+                        similar expressions. However, it should be noted that
+                        the word kako
+                            (past) is included only in Oguro's important
+                        words. Words that represent time, such as kako (past),
+                                mirai
+                            (future) and genzai (present), are not
+                        commonly heard from the other artists. Specifically,
+                        phrases such as, 泣きながらあなたを諦めようとした過去も(nakinagara anata wo akirame you to
+                                shita kakomo; the past when I cried
+                            and tried to give you up (熱くなれ[Atsukunare; heat
+                            up]) and 過去を責めてもあなたは帰らない(kako wo semetemo anata wa nera
+                                nai; even if I blame the past, you do
+                            not return) (チョット[Chotto; a
+                            moment]), appear in her lyrics.Ai OtsukaMathematical numbers such as 1 and 2 appeared in the 1
+                        and 4 ranks, while we can use kanji to indicate the same
+                        meaning in Japanese. In addition, katakana in Japanese
+                                (koto
+                            (thing)) appeared at 7 rank and chatter
+                        expressions such as Naa and nante appeared at 14 and 15
+                        ranks. We inferred that these expressions make her songs
+                        moderate and accessible, and can represent her special
+                        lyrical characteristics. Examples of her lyrics include
+                                恋してれば全てが2
+                            倍Power (aishitereba
+                                subetega 2bai Power; When we're in
+                            love, everything grows to twice, the power),
+                                チューすれば1
+                            話始まるStory (chusureba 1wa hajimaru Story; When we
+                            kiss one story begins) (CHU-LIP), もう1 つ食べたいわ(mou hitotsu tabetai wa;
+                            I want to eat one more),
+                        もう1 杯飲みたいわ(mou ippai nomi tai wa; I
+                            want to drink one more),  人はとてもめんどうだから(hittori wa totemo mendou
+                                dakara; It is tedious being alone)
+                            (フレンジャー[Frienger]
+                  ), 夏の終わりに2
+                                人で抜けだしたこの公園で見つけた(natsu no owarini futari de
+                                nukedashita kono koen de mitsuketa; we
+                            snuck out at the end of summer and met at this
+                            park), and 
+                                番に君が好きだよ強くいられる(ichiban ni kimi ga suki dayo tsuyoku
+                                irareru; I love you more than anything
+                            and it makes me strong) (Planetarium). The fact the word koto (thing) written
+                        in kanji appeared in
+                        Aiko's ranking, but the same word in katakana appears in Otsuka's
+                        ranking is also noteworthy. Using hiragana and katakana instead of Chinese numerals and
+                        kanji softens the appearance of her lyrics. It does not
+                        appear in the top important words, but the use of
+                                toki
+                            (when) in katakana instead of kanji in 好きなトキ出かけて好きなトキ甘えて(sukina toki dekakete sukina toki
+                                amaete; going out when I want to,
+                            spoiling myself when I want to) (ネコに風船
+                                [Nekoni
+                                fuusen; cat with a balloon]),
+                        is an example of this.Sheena RingoKanji appeared at 2, 5, 6, 7, 11, 12, 15, 17 ranks. Even
+                        function words such as sono (its) and made (till) were
+                        used in kanji, although
+                        these words are usually written in hiragana in modern Japanese.
+                        We inferred that, contrary to Otsuka, these expressions
+                        make her songs solid and aggressive, and can represent
+                        her special lyrical characteristic. The lyrics
+                                グラスよりも其の御口に注いで戴きたいのだもの (gurasu yorimo sono okuchi ni
+                                sosoide itadakitai no da mono; pour
+                            into not my glass but my mouth) (真夜中は純潔
+                                Moyonaka wa junketsu; midnight is
+                            chaste) are a specific example of this. In
+                        addition, Ai Otsuka and Sheena Ringo use 居 (i; presence) as
+                        representing the same meaning, but Shina often ventures
+                        to use the kanji. For example, Otsuka writes,
+                                いつだってそこにいてあげるんだ(itsu datte soko ni ite
+                                agerunda; I'll always be there for
+                            you) (フレンジャー[Frienger]), but
+                        Shina writes 一番愛しいあなたの声迄掠れさせて居たのだろう(ichiban itoshii anata no koe made
+                                kasuresasete ita no darou; turned even
+                            your voice, the thing I love most, hoarse)
+                            (罪と罰[Tsumi to
+                                batsu; crime and punishment])
+                        and ずっと繋がれて居たいわ(zutto tsunagarete itai wa; I want to
+                            stay connected to you forever) (本能 [honnou;
+                            instinct]). Other examples of her lyrics
+                        that do not appear in the top ranking in which she also
+                        uses kanji are
+                                返して貰うまでもない筈
+                                (kaeshite morau mademo
+                                naihazu; you shouldn't even go so far
+                            as to get it back) (ありあまる富[Ariamaru tomi; excessive
+                        wealth]), もっと中迄入って(motto
+                                nakamade haite; get deeper inside)
+                                (本能honnou; instinct)
+                        and 此処に居て(kokoni ite; stay
+                            here) (ギブス [Gibusu;
+                            cast]").Mariya TakeuchiContent words appeared at 2, 4, 5, 6, 12, 13, 16, 19, 20
+                        ranks; therefore, we inferred that this lyrical
+                        characteristic of her songs led to high error rates
+                        shown in Table 2 as well as
+                        Kohmi Hirose. Among the 10 singer-songwriters, Takeuchi
+                        and Nakajima belonged to the 1970 and 1990 eras; their
+                        lyrical characteristics were considerably different. In
+                        Takeuchi's songs, [Denwa]
+                            (telephone) that represent the communication
+                        styles in that era appeared at 20 rank, while e-mail or
+                        cell phones were not famous during that era. We inferred
+                        that these words represent her special lyrical
+                        characteristic, as well as people's communication styles
+                        during that era. It can also be inferred that the
+                        subject of many of her songs is love. Specific examples
+                        include, 私だって命がけの恋に憧れることはある (watashi datte inochigake no koini
+                                akogareru kotowa aru; I yearn for a
+                            desperate love) (純愛ラプソディ[Junai
+                            Rhapshody]), 手放した恋を今あなたも悔やんでるなら
+                                (tebanashita koi wo ima
+                                anatamo kuyanderu nara; if you also
+                            regret throwing our love away) and 電話ぐらいくれてもいいのに (denwa gurai kuretemo
+                                iinoni; just a phone call would
+                            do) (シングル・アゲイン[single again]) and
+                                にぎわう街の音がかすかに聞こえる(nigiwau machi no oto ga kasukani
+                                kikoeru; I hear the faint sound of the
+                            bustling city) (カムフラージュ[camouflage]).Hikaru UtadaThe second person pronoun Kimi (you) was the most important
+                        distinguishing characteristic of Utada's songs, while
+                        first person pronouns were more important in the other
+                        nine singers. In the case of other artists, words that
+                        represent the first person, such as atashi (I) and
+                                watashi
+                            (I) appear in the top rankings more often than
+                        words that represent the second person, such as
+                                kimi
+                            (you) and anata (you), and it is only in
+                        Utada's lyrics that second person pronouns out rank
+                        first person pronouns. Specific examples of her lyrics
+                        with kimi (you)
+                        include, ありがとう、と君に言われるとなんだかせつない(arigatou, to kimi ni iwareru to
+                                nandaka setsunai; when you tell me
+                            thank you, it is somehow bittersweet) (Flavor of Life), いいじゃないかキャンバスは君のもの(iija nai ka kyanbasu wa kimi no
+                                mono; that'll do, right? The canvas is
+                            yours) (Colors), 君という光が私をみつける(kimi to iu hikari ga watashi wo
+                                mitsukeru; a light called
+                                you has found me)
+                            (光[hikari; light] ),
+                                もっと君に近づきたいよ(motto kimini chikazuki taiyo; I want
+                            to get closer to you) and そっと君に手を伸ばすよ (sotto kimi ni te wo
+                                nobasuyo; reaching out for you)
+                            (SAKURA ドロップス
+                            [sakura drops]) and 近づきたいよ君の理想に(chikazuki taiyo kimi no
+                                risouni; I want to get closer to your
+                            ideal) (Can You Keep a
+                            Secret). In addition, many English words
+                        such as I and baby appeared at 2, 3, 6, 7,
+                        16 ranks, and we inferred that they represent her
+                        special lyrical characteristics. It is inferred that she
+                        uses a lot of imported words because she was born in New
+                        York in America.YUIChatter expressions such as nante, desyo, tte, ja, as well as question marks,
+                        appeared at 1, 2, 4, 7, 18 ranks. YUI moved to Tokyo
+                        from Fukuoka at the age of 17 and is the youngest artist
+                        in this analysis. It is inferred that her lyrics contain
+                        Japanese expression of the new generation. Although YUI
+                        is commonly known to prefer English words in her lyrics
+                            ,For example, all
+                            the titles of her songs are in English or written in
+                            alphabets . this
+                        characteristic of her lyrics did not clearly appear in
+                            Table 2, because she
+                        used various types of English words, and the number of
+                        tokens of these words was rather small; thus, it cannot
+                        be used well for her classification. In addition, the
+                        word yoru
+                            (night) appeared in YUI's important words, but
+                        not those of any of the other artists. The appearance of
+                        words that represent periods of time within a day, such
+                        as asa (morning)
+                        and hiru
+                            (afternoon) and gozen (morning) and gogo (afternoon),
+                        clearly demonstrates a world view in terms of time in
+                        the lyrics. Specifically, in lyrics such as 星の夜願い込めて CHE.R.RY
+                                (hoshi no yoru negai
+                                komete che.r.ry; I make a wish in the
+                            starry night, cherry) (Che.r.ry), なみだいろ声が聞こえない夜は (Namida iro koe ga kikoe nai yoru
+                                wa; the color of tears on nights when
+                            I can't hear your voice) ( Namidairo (the color of
+                            tears)) and わすれちゃいそうな夜の真ん中(wasure chai souna yoru no mannaka; in
+                            the middle of the night I begin to forget that)
+                            (Again), it is possible to understand
+                        the specific time of day and imagine the situation as
+                        you listen and become more emotionally involved with the
+                        lyrics. Furthermore, it was not part of the lyrical
+                        analysis this time, but all of the names of YUI's songs
+                        are written using a foreign language. YUI was born in
+                        Fukuoka Prefecture and does not have the same unusual
+                        background as Hikaru Utada, and therefore it could be
+                        said that this is an idiosyncrasy of YUI's. YUI often
+                        romanizes expressions that were not originally in
+                        English, such as, CHE.R.RY
+                        and Namidairo, and it is possible
+                        that she has deliberately used an English title to
+                        address any preconceptions that might arise from using a
+                        Japanese title. These points require further study.Further DiscussionIn the section above, we analyzed the characteristics of
+                    individual singer-songwriters. The common point that emerged
+                    from this analysis is that love is invariably an important
+                    subject for women regardless of the era. Many of the
+                    listeners of songs written and sung by women such as Yumi
+                    Matsutoya and Mariya Takeuchi in earlier decades and aiko
+                    and Ai Otsuka in recent decades are young women, and love is
+                    a common theme and an important feature of communication for
+                    this age group. However, the style used to talk about love differs by era
+                    and singer. For example, singers like Mariya Takeuchi and
+                    Yumi Matsutoya use many words related less to linguistic
+                    expression and more to lyrical content, imagery, and
+                    feelings, expressing their individuality through such
+                    content and imagery. In contrast, modern singers assert a
+                    stronger linguistic and stylistic individuality: aiko with
+                    her concrete representations of the body, Utada with
+                    imported words, YUI with colloquialisms, Otsuka with
+                    numerals, hiragana,
+                        katakana, and so on,
+                    and Shiina with formal
+                    words and words of Chinese origin. This is a main feature of
+                    the lyrics of Japanese female singer-songwriters from the
+                    1990s onwards, following the idol period of the 1980s. Naturally, with this change there is also a corresponding
+                    change in the listeners. Since 2000, communication on the
+                    internet and by cell phone has increased and people's
+                    conditions for communication and the style of language
+                    people use when communicating continue to change
+                    significantly. The arrival of the internet is producing a
+                    new Japanese language that is neither spoken nor written
+                    language , and the shape of the
+                    Japanese language and, in particular, the way in which young
+                    people communicate, is changing. As a new style emerges from
+                    the past and traditional styles of writing narratives
+                    continue to change, people are also choosing different
+                    styles of and using different expressions for talking about
+                    the same emotions. We conclude that this change in the
+                    conditions for communication among such people corresponds
+                    to the change in the lyrics of singer-songwriters. According to the findings of our research, the most
+                    significant change in the lyrics of current
+                    singer-songwriters can be conceptualized as the
+                        visual effects of the lyrics. This partially
+                    corresponds with the general change in Japanese characters
+                    and communication styles among Japanese youngsters. However,
+                    this concept includes aspects that are specific to the
+                    stylistic characters of their lyrics. As we mention above, a
+                    special characteristic of current singer-songwriters is
+                    their varied characters. For example, a singer prefers
+                            koto (thing)
+                    in katakana, while another
+                    prefers it in kanji.
+                    Simultaneously, another singer favors sono (that) in hiragana, whereas another
+                    prefers it in kanji. These
+                    examples correspond with general changes in Japanese during
+                    the 1990s and 2000s as well as the utilization of the
+                    Internet, mobile phones, and e-mail as popular communication
+                    tools. More specifically, among the young females, the
+                    emotions or feelings that the
+                        characters transmit have become
+                    particularly important. This has led to the overall
+                    popularity of emojis and emoticons. However, the styles of
+                    their lyrics still include an independent character that
+                    differs from the general changes in Japanese. With regard to emojis and emoticons, these general changes
+                    in Japanese are written ones. However, written lyrics also
+                    have an important role: they must be sung. Thus, we assume
+                    that in the dynamic era of Japanese and its communication
+                    styles, singer-songwriters must be sensitive in their
+                    overall approach to writing lyrics, in which the meanings of
+                    the words and their characters must effectively transmit
+                    personal feelings or emotions. As mentioned in the
+                    introduction, karaoke is a popular activity among young
+                    people, in which singing the displayed
+                    lyrics is equally important as being
+                        heard. Current female singer-songwriters
+                    select personal lyrical writing styles that correspond to
+                    the latest communication styles. They must naturally
+                    consider that their lyrics will be
+                    sung. However, we must assume that they
+                    are sensitive to the fact that their lyrics will also be
+                        seen. Compared to this
+                    aforementioned approach, the use of loan words is not a
+                    unique characteristic that reflects the current
+                    communication styles of youngsters. Our results indicate
+                    that some singers, such as Utada and YUI, prefer using
+                    English words in their lyrics. This was also seen in the
+                    lyrics of singer-songwriters during the 1980s, including
+                    Nakajima, Takeuchi, and Matsutoya. In this case, English
+                    words could provide an alienation effect when heard, but
+                    visually, they are still written in the standard manner.
+                    Therefore, we can conclude that this is a secondary point of
+                    discussion regarding the lyrics of current female
+                    singer-songwriters YUI’s CHE.R.RY is an exception that uses the
+                            visual effects of the lyrics even in
+                        English..ConclusionIn summary, this study analyzed popular Japanese songs
+                    composed by Japanese female singer-songwriters over the past
+                    30 years, by using methods of computational stylistics. Our
+                    texts contained various characteristics as mentioned in the
+                    Introduction; thus our study using kernel PCA and random
+                    forests provided an important case study for computational
+                    stylistics. We also provided empirical knowledge for
+                    understanding the Japanese language, and communication
+                    styles. The results of this study showed that although love is a
+                    common theme in the lyrics of female singer-songwriters, the
+                    manner of expressing love varies significantly depending on
+                    the era and the individual singer. The subtle topic of love
+                    certainly differs for every singer-songwriter as well as
+                    every song. However, we found many content-independent
+                    characteristics, such as the selection of kanji and kana, in singer-songwriters after the 2000s.
+                    These kinds of individuality are what make ordinary people
+                    make comments like This sounds like such and such a
+                        singer, and we were able to clarify these
+                    differences by applying machine learning. The results of
+                    this study suggest that the variety of styles is an
+                    important characteristic of current singer-songwriters.
+                    Thus, we can conclude that they emphasize linguistic and
+                    stylistic factors, including word play. In this study, we
+                    took the theoretical premise that lyrics are important for
+                    understanding modern society and submitted it to empirical
+                    analysis. According to , popular
+                    songs are first sung, and The action of
+                            Singing is primary and open to
+                        a wider range of people than is the action of
+                            Writing, thus it is closer to
+                        the ordinary. However, in contemporary Japanese
+                    society, in which karaoke is popular and communication
+                    styles have changed, the popular songs are
+                        seen as well as
+                        sung. This visualization
+                        of the lyrics is a typical characteristic of
+                    current singer-songwriters. Therefore, this study adds this
+                    point to Mita’s theory for identifying the application of
+                    popular songs in current Japanese popular culture and
+                    society. The shifts in modern Japanese culture can be investigated
+                    further by analyzing each respective genre, lyrics in
+                    conjunction with the other non-lyric musical elements of
+                    popular music. It is no doubt possible to enhance the
+                    results of this study by applying content analysis to the
+                    lyrics and by using a larger data set. We intend to work on
+                    these points in the future.
