@@ -42,7 +42,11 @@ for (file in 1:length(filelist)) {
 
 # Write it to files
 for (file in 1:length(filelist)) {
-  folder.target.parent <- paste("data/texts",doc.date[file],sep="/")
+  folder.target.grandparent <- paste("data/txt")
+  if (!file.exists(folder.target.grandparent)){
+    dir.create(file.path(getwd(), folder.target.grandparent))
+  }
+  folder.target.parent <- paste(folder.target.grandparent,doc.date[file],sep="/")
   folder.target.main <- paste(folder.target.parent,doc.authors[file],sep="/")
   if (!file.exists(folder.target.parent)){
     dir.create(file.path(getwd(), folder.target.parent))
