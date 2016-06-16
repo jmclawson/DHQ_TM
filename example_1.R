@@ -5,18 +5,21 @@
 ## the original lda-c implementation by David Blei. 
 ## See https://www.cs.princeton.edu/~blei/lda-c/index.html
 
-options(java.parameters = "-Xmx4g")
+# options(java.parameters = "-Xmx4g")
 source("functions/lda.R")
 source("functions/import.R")
 
 # The directory from which to import data. The example includes the AP dataset, but
 # you can easily run this with your own data by creating a new directory and adding
 # the documents that you would like to model as .txt files, with one file per/document
-folder.target.grandparent <- paste("data/txt")
+folder.target.grandparent <- "data/txt"
 if (!file.exists(folder.target.grandparent)){
   print("Please run readbyXML.R first.")
 }
 data.dir <- "data/txt"
+if (!file.exists("data/plots")){
+  dir.create(file.path(getwd(), "data/plots"))
+}
 
 # This loads the documents from the directory above in a format that can be used 
 # with Mallet.
