@@ -2,24 +2,55 @@ library(XML)
 
 filelist <- list.files(path="data",pattern="*xml",recursive=TRUE,full.names=T)
 
-doc.matrix <- matrix()
+# Get the dates
+doc.date <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.date.prel <- xmlElementsByTagName(docextract[[1]],"date", recursive=TRUE)
+  doc.date <- c(doc.date,xmlValue(doc.date.prel[[1]]))
+}
+
+# Get the author names
+doc.authors <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.authors.prel <- xmlElementsByTagName(docextract[[1]],"family", recursive=TRUE)
+  doc.authors <- c(doc.authors,xmlValue(doc.authors.prel[[1]]))
+}
+
+# Get the title names
+doc.title <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.title.prel <- xmlElementsByTagName(docextract[[1]],"title", recursive=TRUE)
+  doc.title.fix <- gsub("\\s+|\\s+|\\/","",xmlValue(doc.title.prel[[1]])) #
+  doc.title <- c(doc.title,doc.title.fix)
+}
+
+# Get the contents of the bodies
+doc.body <- c()
 for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   header.extract <- getNodeSet(doc, "/tei:TEI//tei:titleStmt",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
   text.extract <- getNodeSet(doc, "/tei:TEI//tei:text",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
-  
-  doc.title <- xmlValue(xpathApply(doc,"/tei:TEI//tei:title",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))[[1]])[[1]]
- 
-  # doc.author_name <- xmlValue(xpathApply(doc,"/tei:TEI//tei:author_name",namespaces = c(tei = "http://www.tei-c.org/ns/1.0")))
-  # doc.author_name <- getNodeSet(doc,"tei:TEI//teiHeader//fileDesc//titleStmt//dhq:authorInfo",nnamespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
-  # doc.author_name.x <- xmlElementsByTagName(doc.author_name[[1]],"dhq:authorInfo")
+  doc.body.prel <- xmlValue(xmlElementsByTagName(text.extract[[1]],"body")[[1]])
+  doc.body <- c(doc.body,doc.body.prel)
+}
 
-  # doc.affiliation <- xmlElementsByTagName(header.extract[[1]],"dhq:affiliation")
-  # doc.affiliation.v <- xmlValue(doc.affiliation[[1]]) 
-  
-  doc.body <- xmlValue(xmlElementsByTagName(text.extract[[1]],"body")[[1]])
-break
-  articlefile <- paste("data/texts/",file,sep="")
-  articlefile <- paste(articlefile,".txt",sep="")
-  write(doc.body,file=articlefile,append=FALSE,sep="")
+# Write it to files
+for (file in 1:length(filelist)) {
+  folder.target.parent <- paste("data/texts",doc.date[file],sep="/")
+  folder.target.main <- paste(folder.target.parent,doc.authors[file],sep="/")
+  if (!file.exists(folder.target.parent)){
+    dir.create(file.path(getwd(), folder.target.parent))
+  }
+  if (!file.exists(folder.target.main)){
+    dir.create(file.path(getwd(), folder.target.main))
+  }
+  filename <- paste(doc.title[file],".txt",sep="")
+  filename <- paste(folder.target.main,filename,sep="/")
+  write(doc.body,file=filename,append=FALSE,sep="")
 }
