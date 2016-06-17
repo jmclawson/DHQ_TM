@@ -7,7 +7,7 @@ source("functions/import.R")
 # the topics to discover similarities within the models and between the models.
 if (retrain.model)
 {
-  data.dir <- "data/ap"
+  data.dir <- "data/txt"
   print(paste("Training LDA model from documents in", data.dir))
   docs <- loadDocuments(data.dir);
   stoplist <- "stop-words/stop-words_english_3_en.txt"

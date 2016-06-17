@@ -6,13 +6,20 @@ source("functions/lda.R")
 source("functions/import.R")
 
 # As in example 1, train a topic model from the AP dataset
-data.dir <- "data/ap"
+data.dir <- "data/txt"
 docs <- loadDocuments(data.dir);
 stoplist <- "stop-words/stop-words_english_3_en.txt"
 model <- trainSimpleLDAModel(docs, 50, stoplist=stoplist)
 
 # get a specific topic
 topic.2 <- model$getTopic(2)
+
+# assign top words for each topic
+dhq.words <- c()
+for (topic in 1:model$K) {
+  dhq.words <- c(dhq.words,model$getTopic(topic)$getWords(10))
+}
+
 
 # list the top 10 words
 topic.2$getWords(10)
