@@ -7,7 +7,7 @@ library(openNLP)
 ## SET "saveas.file" to the destination directory
 #### The resulting file has an "n" prepended to the file name. Whether you reuse the same directory is your choice.
 data.dir <- "data/txt/Gavin/"
-saveas.file <- data.dir # feel free to save into a different folder if preferred
+saveas.file <- "data/txt-n/Gavin/" # on second thought, it's best to have a different folder, as the LDA scripts will read everything in a directory
 
 file.list <- list.files(path=data.dir) # get all the filenames in the path
 
