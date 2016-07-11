@@ -8,7 +8,9 @@ for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
   doc.date.prel <- xmlElementsByTagName(docextract[[1]],"date", recursive=TRUE)
-  doc.date <- c(doc.date,xmlValue(doc.date.prel[[1]]))
+  doc.date.pre2 <- as.Date(xmlValue(doc.date.prel[[1]]),format='%d %B %Y')
+  doc.date.pre3 <- format(doc.date.pre2[[1]],"%Y-%m-%d")
+  doc.date <- c(doc.date,doc.date.pre3[[1]])
 }
 
 # Get the author names
@@ -42,7 +44,7 @@ for (file in 1:length(filelist)) {
 
 # Write it to files
 for (file in 1:length(filelist)) {
-  folder.target.grandparent <- paste("data/txt")
+  folder.target.grandparent <- paste("data/txt2")
   if (!file.exists(folder.target.grandparent)){
     dir.create(file.path(getwd(), folder.target.grandparent))
   }
