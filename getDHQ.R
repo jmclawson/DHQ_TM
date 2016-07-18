@@ -37,11 +37,7 @@ for (url in dhq.items$urls) {
   dhq.items$volume <- c(dhq.items$volume,dhq.url.vol[[1]][2])
   dhq.items$issue <- c(dhq.items$issue,dhq.url.iss[[1]][2])
   dhq.items$xml <- c(dhq.items$xml,dhq.url.path)
-  rm(dhq.url.vol)
-  rm(dhq.url.iss)
-  rm(dhq.url.id)
-  rm(dhq.url.xml)
-  rm(dhq.url.path)
+  rm(dhq.url.vol,dhq.url.iss,dhq.url.id,dhq.url.xml,dhq.url.path)
 }
 rm(url)
 
@@ -90,12 +86,175 @@ dhq.data <- data.frame(urls = dhq.items$xml, vol = dhq.items$volume, iss = dhq.i
 write.csv(dhq.data,file="dhq-data.csv")
 
 # Download the files into a new directory
-for (number in 1:length(dhq.items$xml)) {
-  if (!file.exists("xml")){
-    dir.create(file.path(getwd(), "xml"))
-    }
-  dhq.filename <- paste("xml",dhq.items$id[number],sep="/")
-  dhq.filename <- paste(dhq.filename,"xml",sep=".")
-  download.file(dhq.items$xml[number], destfile = dhq.filename, method="auto")
+if (!file.exists("xml")) {
+  dir.create(file.path(getwd(), "xml"))
+  for (number in 1:length(dhq.items$xml)){
+    dhq.filename <- paste("xml",dhq.items$id[number],sep="/")
+    dhq.filename <- paste(dhq.filename,"xml",sep=".")
+    download.file(dhq.items$xml[number], destfile = dhq.filename, method="auto")
+  }
+  rm(dhq.filename,number)
 }
-rm(number)
+
+## parse the XML file contents
+library(XML)
+filelist <- list.files(path="xml",pattern="*xml",recursive=TRUE,full.names=T)
+
+# Get the dates
+doc.date <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.date.prel <- xmlElementsByTagName(docextract[[1]],"date", recursive=TRUE)
+  doc.date.pre2 <- as.Date(xmlValue(doc.date.prel[[1]]),format='%d %B %Y')
+  doc.date.pre3 <- format(doc.date.pre2[[1]],"%Y-%m-%d")
+  doc.date <- c(doc.date,doc.date.pre3[[1]])
+  rm(doc.date.prel,doc.date.pre2,doc.date.pre3)
+}
+
+# Get the author family names and author counts
+doc.authors <- c()
+doc.authorcount <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.authorcount <- c(doc.authorcount,xpathApply(xmlRoot(doc),path="count(//dhq:family)",xmlValue))
+  doc.authors.prel <- xmlElementsByTagName(docextract[[1]],"family", recursive=TRUE)
+  doc.authors <- c(doc.authors,xmlValue(doc.authors.prel[[1]]))
+  rm(doc.authors.prel)
+}
+
+# Get the titles
+doc.title <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.title.prel <- xmlElementsByTagName(docextract[[1]],"title", recursive=TRUE)
+  doc.title.fix <- gsub("\\s+|\\s+|\\/|:","_",xmlValue(doc.title.prel[[1]],trim=TRUE)) #
+  doc.title <- c(doc.title,doc.title.fix)
+  rm(doc.title.prel,doc.title.fix)
+}
+
+# Extract the ID, volume, issue
+doc.idno <- list()
+doc.id <- c()
+doc.vol <- c()
+doc.iss <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.idno[[file]] <- xmlElementsByTagName(docextract[[1]],"idno", recursive=TRUE)
+}
+for (file in 1:length(filelist)) {
+  doc.id[file] <- unlist(lapply(doc.idno[[file]][1], xmlValue, trim=TRUE))
+  doc.vol[file] <- unlist(lapply(doc.idno[[file]][2], xmlValue, trim=TRUE))
+  doc.iss[file] <- unlist(lapply(doc.idno[[file]][3], xmlValue, trim=TRUE))
+}
+
+# Get the affiliations
+doc.affil.list <- list()
+doc.affil.1 <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.affil.list[[file]] <- xmlElementsByTagName(docextract[[1]],"affiliation", recursive=TRUE)
+  doc.affil.list[[file]] <- lapply(doc.affil.list[[file]], xmlValue)
+  doc.affil.1[file] <- unlist(doc.affil.list[[file]][1])
+}
+
+# Get the contents of the bodies
+doc.body <- c()
+for (file in 1:length(filelist)) {
+  doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
+  header.extract <- getNodeSet(doc, "/tei:TEI//tei:titleStmt",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  text.extract <- getNodeSet(doc, "/tei:TEI//tei:text",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
+  doc.body.prel <- xmlValue(xmlElementsByTagName(text.extract[[1]],"body")[[1]])
+  doc.body <- c(doc.body,doc.body.prel)
+  rm(doc.body.pre1)
+}
+
+# # Write it to files -- done later in chunks
+# if (!dir.exists("txt")) {
+#   dir.create(file.path(getwd(), "txt"))
+#   for (file in 1:length(filelist)) {
+#     filename <- paste("txt/",doc.id[file],".txt",sep="")
+#     write(doc.body[file],file=filename,append=FALSE,sep="")
+#   }
+# }
+# rm(file)
+
+# write it out to a data frame to compare with the one from the website
+doc.data <- data.frame(vol = doc.vol, issue = doc.iss, id = doc.id, title = doc.title, auth.nums = doc.authorcount, auth.1 = doc.authors, affil.1 = doc.affil.1, stringsAsFactors = FALSE)
+
+write.csv(doc.data,file="xmldocument-data.csv")
+
+# Chunk the text (from Jockers' Text Analysis with R)
+makeFlexTextChunks <- function(dhq.doc.text, chunk.size=1000, percentage=TRUE){
+  words.lower <- tolower(dhq.doc.text)
+  words.lower <- gsub("[^[:alnum:][:space:]']", " ", words.lower)
+  words.l <- strsplit(words.lower, "\\s+")
+  word.v <- unlist(words.l)
+  x <- seq_along(word.v)
+  if(length(word.v) <= chunk.size) {
+    chunks.l <- split(word.v, ceiling(x/chunk.size))
+  }
+  else {
+    if(percentage){
+      max.length <- length(word.v)/chunk.size
+      chunks.l <- split(word.v, ceiling(x/max.length))
+      }
+    else {
+      chunks.l <- split(word.v, ceiling(x/chunk.size))
+      if(length(chunks.l[[length(chunks.l)]]) <= chunk.size/2){
+        chunks.l[[length(chunks.l)-1]] <- c(chunks.l[[length(chunks.l)-1]], chunks.l[[length(chunks.l)]])
+        chunks.l[[length(chunks.l)]] <- NULL
+      }
+    }
+  }
+  chunks.l <- lapply(chunks.l, paste, collapse=" ")
+  chunks.df <- do.call(rbind, chunks.l)
+}
+
+doc.chunks <- list()
+for (number in 1:length(filelist)) {
+  doc.chunks[[number]] <- makeFlexTextChunks(doc.body[number], chunk.size = 1000, percentage = FALSE)
+}
+
+# Write text to files in chunks ~1,000 each, but only if txt dir doesn't exist
+if (!dir.exists("txt")) {
+  dir.create(file.path(getwd(), "txt"))
+  for (number in 1:length(doc.chunks)) {
+    for (sub in 1:length(doc.chunks[[number]])) {
+      filename <- paste("txt/",doc.id[number],"-",sub,".txt",sep="")
+      write(doc.chunks[[number]][sub],file=filename,append=FALSE,sep="")
+    }
+  }
+}
+rm(number,sub)
+
+## Strip out everything but the common nouns, but only if txt-n dir doesn't exist
+# via http://stackoverflow.com/questions/30995232/how-to-use-opennlp-to-get-pos-tags-in-r
+if (!dir.exists("txt-n")) {
+  dir.create(file.path(getwd(), "txt-n"))
+  library(NLP) 
+  library(openNLP)
+  noun.startdir <- "txt/"
+  noun.enddir <- "txt-n/"
+  noun.files <- list.files(path=noun.startdir)
+  for (noun.file in noun.files) {
+    txt <- as.String(readLines(paste(noun.startdir, noun.file, sep="")))
+    wordAnnotation <- annotate(txt, list(Maxent_Sent_Token_Annotator(), Maxent_Word_Token_Annotator()))
+    POSAnnotation <- annotate(txt, Maxent_POS_Tag_Annotator(), wordAnnotation)
+    POSwords <- subset(POSAnnotation, type == "word")
+    tags <- sapply(POSwords$features, '[[', "POS")
+    # The next line searches for tagged common nouns (NN); change it for other part-of-speech tags
+    thisPOSindex <- grep("NN$", tags)
+    tokenizedAndTagged <- sprintf("%s/%s", txt[POSwords][thisPOSindex], tags[thisPOSindex])
+    untokenizedAndTagged <- paste(tokenizedAndTagged, collapse = " ")
+    # "NN" in the next line signifies common nouns, too
+    untokenizedAndTagged <- gsub("\\/NN", "", untokenizedAndTagged)
+    noun.savefile <- paste(noun.enddir, "n", noun.file, sep="")
+    write(untokenizedAndTagged, file=noun.savefile, append = FALSE, sep="")
+  }
+}
+rm(noun.startdir, noun.enddir, noun.files, txt, wordAnnotation, POSAnnotation, POSwords, tags, thisPOSindex, tokenizedAndTagged, untokenizedAndTagged, noun.savefile, noun.file)
