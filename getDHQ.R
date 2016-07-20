@@ -105,11 +105,11 @@ doc.date <- c()
 for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
-  doc.date.prel <- xmlElementsByTagName(docextract[[1]],"date", recursive=TRUE)
-  doc.date.pre2 <- as.Date(xmlValue(doc.date.prel[[1]]),format='%d %B %Y')
+  doc.date.pre1 <- xmlElementsByTagName(docextract[[1]],"date", recursive=TRUE)
+  doc.date.pre2 <- as.Date(xmlValue(doc.date.pre1[[1]]),format='%d %B %Y')
   doc.date.pre3 <- format(doc.date.pre2[[1]],"%Y-%m-%d")
   doc.date <- c(doc.date,doc.date.pre3[[1]])
-  rm(doc.date.prel,doc.date.pre2,doc.date.pre3)
+  rm(doc.date.pre1,doc.date.pre2,doc.date.pre3)
 }
 
 # Get the author family names and author counts
@@ -119,9 +119,9 @@ for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
   doc.authorcount <- c(doc.authorcount,xpathApply(xmlRoot(doc),path="count(//dhq:family)",xmlValue))
-  doc.authors.prel <- xmlElementsByTagName(docextract[[1]],"family", recursive=TRUE)
-  doc.authors <- c(doc.authors,xmlValue(doc.authors.prel[[1]]))
-  rm(doc.authors.prel)
+  doc.authors.pre1 <- xmlElementsByTagName(docextract[[1]],"family", recursive=TRUE)
+  doc.authors <- c(doc.authors,xmlValue(doc.authors.pre1[[1]]))
+  rm(doc.authors.pre1)
 }
 
 # Get the titles
@@ -129,10 +129,10 @@ doc.title <- c()
 for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
-  doc.title.prel <- xmlElementsByTagName(docextract[[1]],"title", recursive=TRUE)
-  doc.title.fix <- gsub("\\s+|\\s+|\\/|:","_",xmlValue(doc.title.prel[[1]],trim=TRUE)) #
+  doc.title.pre1 <- xmlElementsByTagName(docextract[[1]],"title", recursive=TRUE)
+  doc.title.fix <- gsub("\\s+|\\s+|\\/|:","_",xmlValue(doc.title.pre1[[1]],trim=TRUE)) #
   doc.title <- c(doc.title,doc.title.fix)
-  rm(doc.title.prel,doc.title.fix)
+  rm(doc.title.pre1,doc.title.fix)
 }
 
 # Extract the ID, volume, issue
@@ -158,7 +158,8 @@ for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
   doc.affil.list[[file]] <- xmlElementsByTagName(docextract[[1]],"affiliation", recursive=TRUE)
-  doc.affil.list[[file]] <- lapply(doc.affil.list[[file]], xmlValue)
+  doc.affil.list[[file]] <- lapply(doc.affil.list[[file]], xmlValue, trim=TRUE)
+  doc.affil.unique[file] <- length(unique(doc.affil.list[[file]]))
   doc.affil.1[file] <- unlist(doc.affil.list[[file]][1])
 }
 
@@ -168,8 +169,8 @@ for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   header.extract <- getNodeSet(doc, "/tei:TEI//tei:titleStmt",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
   text.extract <- getNodeSet(doc, "/tei:TEI//tei:text",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
-  doc.body.prel <- xmlValue(xmlElementsByTagName(text.extract[[1]],"body")[[1]])
-  doc.body <- c(doc.body,doc.body.prel)
+  doc.body.pre1 <- xmlValue(xmlElementsByTagName(text.extract[[1]],"body")[[1]])
+  doc.body <- c(doc.body,doc.body.pre1)
   rm(doc.body.pre1)
 }
 
@@ -184,7 +185,7 @@ for (file in 1:length(filelist)) {
 # rm(file)
 
 # write it out to a data frame to compare with the one from the website
-doc.data <- data.frame(vol = doc.vol, issue = doc.iss, id = doc.id, title = doc.title, auth.nums = doc.authorcount, auth.1 = doc.authors, affil.1 = doc.affil.1, stringsAsFactors = FALSE)
+doc.data <- data.frame(vol = doc.vol, issue = doc.iss, id = doc.id, title = doc.title, auth.nums = doc.authorcount, affil.nums = doc.affil.unique, auth.1 = doc.authors, affil.1 = doc.affil.1, stringsAsFactors = FALSE)
 
 write.csv(doc.data,file="xmldocument-data.csv")
 
