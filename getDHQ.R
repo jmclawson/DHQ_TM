@@ -154,6 +154,7 @@ for (file in 1:length(filelist)) {
 # Get the affiliations
 doc.affil.list <- list()
 doc.affil.1 <- c()
+doc.affil.unique <- c()
 for (file in 1:length(filelist)) {
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
