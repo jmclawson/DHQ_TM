@@ -1,4 +1,4 @@
-# This script creates a data frame detailing DHQ metadata and downloads the XML files
+# This script creates a data frame detailing DHQ metadata and downloads all the XML files
 
 library(rvest)
 library(stringr)
