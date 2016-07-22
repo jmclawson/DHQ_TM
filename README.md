@@ -15,14 +15,14 @@ The first of these, **getDHQ.R** takes a long time to run the first time, but it
 7. scrapes these XML files for richer data to allow for comparison against website
 8. stores data in a data frame in R, "doc.data"
 9. exports a CSV file of this data frame, "xmldocument-data.csv"
-10. separates the body text of each XML file into ~1,000-word chunks
+10. separates the body text of each XML file into ~1,000-word chunks (see [Jockers' reasoning](http://www.matthewjockers.net/2013/04/12/secret-recipe-for-topic-modeling-themes/), though it may be less applicable to articles, which are shorter in length, which might result in a topic getting split across two chunks, thereby cutting it out of the model altogether)
 11. checks to see if a folder called "txt" exists; skips the rest of step 11 if so
 	- creates the folder "txt"
 	- saves the ~1,000-word chunks in individual text files into this folder
 12. checks to see if a folder called "txt-n" exists; skips the rest of 12 if so
 	- reads each text file in "txt" one at a time
 	- tags each word as a part of speech
-	- strips out everything that isn't tagged as a common noun
+	- strips out everything that isn't tagged as a common noun (again, explained by Jockers on a [blog post](http://www.matthewjockers.net/2013/04/12/secret-recipe-for-topic-modeling-themes/))
 	- saves each common noun chunk in the "txt-n" folder
 
 ## ldaDHQ.R
