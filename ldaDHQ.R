@@ -6,7 +6,6 @@
 # options(java.parameters = "-Xmx4g")
 source("functions/lda.R")
 source("functions/import.R")
-set.seed(4444) # makes our trials consistent each time (good for collaborating)
 
 # Set data.dir to the directory with data. First using getDHQ.R will
 # ensure an up-to-date data set that has been chunked into 1,000-word
@@ -78,3 +77,4 @@ plot(unlist(dhq.topics["auth.count"]), unlist(dhq.topics["topic.count"]), xlab="
 write.csv(dhq.topics, file="newest-topics.csv")
 write.csv(dhq.topics.bynums.auth, file="newest-topics-bynums-auth.csv")
 write.csv(dhq.topics.bynums.affil, file="newest-topics-bynums-affil.csv")
+View(dhq.topics)
