@@ -30,7 +30,8 @@ stoplist <- "stop-words/stop-words_english_2_en.txt"
 # Train a document model with 45 topics. This will run Mallet over the documents
 # from data.dir and store the results along with some supporting information 
 # in a convenient data structure
-model <- trainSimpleLDAModel(docs, 45, stoplist=stoplist)
+dhq.k <- 45
+model <- trainSimpleLDAModel(docs, dhq.k, stoplist=stoplist)
 
 # Print the resulting topics as wordclouds for easy visualization.
 print("printing topic word clouds")
@@ -56,6 +57,13 @@ dhq.topics <- cbind(vol = doc.vol, iss = doc.iss, auth.count = doc.authorcount, 
 dhq.averagetopicmedian <- mean(apply(dhq.topics[,6:ncol(dhq.topics)],1,median))
 dhq.topicsabovethreshold <- rowSums(dhq.topics[,6:ncol(dhq.topics)] > dhq.averagetopicmedian)
 dhq.topics <- cbind(dhq.topics[,1:5], topic.count = dhq.topicsabovethreshold, dhq.topics[,6:ncol(dhq.topics)])
+
+# Add useful labels to the topics
+dhq.topwords <- c()
+for (topic in 1:dhq.k) {
+  dhq.topwords[topic] <- paste(names(model$getTopic(topic)$getWords(3)), collapse=", ")
+}
+attr(dhq.topics, "variable.labels")[(6+1):(6+dhq.k)] <- dhq.topwords
 
 # Add filters by the number of authors, number of unique affiliations
 dhq.topics.bynums.auth <- dhq.topics[,c(3,6:ncol(dhq.topics))]
