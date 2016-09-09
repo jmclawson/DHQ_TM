@@ -78,3 +78,5 @@ write.csv(dhq.topics, file="newest-topics.csv")
 write.csv(dhq.topics.bynums.auth, file="newest-topics-bynums-auth.csv")
 write.csv(dhq.topics.bynums.affil, file="newest-topics-bynums-affil.csv")
 View(dhq.topics)
+
+# (4, 5), (3, 5), (2, 5), (1, 5)
