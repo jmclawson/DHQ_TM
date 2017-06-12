@@ -1,5 +1,13 @@
 # This script creates a data frame detailing DHQ metadata and downloads all the XML files
 
+if(!require("rvest"))
+  print("It looks like you need to install the rvest package before proceeding. The command is install.packages(\"rvest\").", quote=F)
+
+if(!require("XML"))
+  print("It looks like you need to install the XML package before proceeding. The command is install.packages(\"XML\").", quote=F)
+
+
+
 library(rvest)
 library(stringr)
 
@@ -154,8 +162,9 @@ for (file in 1:length(filelist)) {
 # Get the affiliations
 doc.affil.list <- list()
 doc.affil.unique <- c()
+doc.affil.1 <- c() # JMC: 6/11/17 - Added this definition
 for (file in 1:length(filelist)) {
-  doc.affil.c[[file]] <- c()
+  # doc.affil.c[[file]] <- c() # JMC: 6/11/17 - I don't think this is needed anymore 
   doc <- xmlTreeParse(filelist[file], useInternalNodes=TRUE)
   docextract <- getNodeSet(doc, "/tei:TEI//tei:teiHeader",namespaces = c(tei = "http://www.tei-c.org/ns/1.0"))
   doc.affil.list[[file]] <- xmlElementsByTagName(docextract[[1]],"affiliation", recursive=TRUE)
@@ -269,11 +278,16 @@ for (file in 1:length(filelist)) {
 }
 
 # # Write it to files -- done later in chunks
-# if (!dir.exists("txt")) {
-#   dir.create(file.path(getwd(), "txt"))
+# if (!dir.exists("txt-full")) {
+#   pathlist.txt.full <- c() ## added to convert to TopicKit
+#   dir.create(file.path(getwd(), "txt-full"))
 #   for (file in 1:length(filelist)) {
-#     filename <- paste("txt/",doc.id[file],".txt",sep="")
+#     filename <- paste("txt-full/",doc.id[file],".txt",sep="")
 #     write(doc.body[file],file=filename,append=FALSE,sep="")
+#     pathlist.txt.full <- c(pathlist.txt.full,filename) ## check that this logic is ordered the same as whichever list
+#     ## pseudocode: add pathlist.txt.full as the first column of either dhq.data or doc.data
+#     ## pseudocode: next, add two empty columns for start.line and end.line (TopicKit can just go from beginning to end)
+#     ## pseudocode: export a CSV to pipe through TopicKit
 #   }
 # }
 # rm(file)
