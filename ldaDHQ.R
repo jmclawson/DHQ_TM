@@ -1,3 +1,6 @@
+## Add the following dumb line to console when rJava throws an error:
+## dyn.load(paste0(system2('/usr/libexec/java_home', stdout = TRUE), '/jre/lib/server/libjvm.dylib'))
+##
 ## Modified from example_1.R
 ##
 ## This file is optimized for collaborative work modeling DHQ. For more
